@@ -11,7 +11,7 @@ const Banner = () => {
  
   return (
     <div>
-      ss
+      
     </div>
   )
 }

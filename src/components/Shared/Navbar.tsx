@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client'
@@ -7,6 +8,8 @@ import logo from "@/assets/logo.webp"
 import Image from "next/image";
 import Sidebar from "../Sidebar/Sidebar";
 import { FiMenu } from "react-icons/fi";
+import { MdArrowOutward } from "react-icons/md";
+
 
 const Navbar = () => {
     
@@ -45,7 +48,7 @@ const Navbar = () => {
 
 
   return (
-     <div className={`w-full bg-gray-400`}>
+     <div className={`w-full bg-white`}>
        <div className="lg:block hidden">
      
         <div className={`!z-[9999999] w-full transition-all duration-300 ease-in-out ${isFixed ? 'bg-white fixed top-0 shadow-navShadow' : ''}`}>
@@ -58,6 +61,19 @@ const Navbar = () => {
 
         <div className="flex items-center gap-[38px] 2xl:gap-[48px]">
           
+        <ScrollLink 
+               to="testmonial"  
+                  spy={true}
+                  smooth={true}
+                  duration={1000}>
+          <div
+            className="text-[#333] text-[20px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#8750F7] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-secondaryColor cursor-pointer"
+          >
+            Home
+          </div>
+          </ScrollLink>
+
+
         <ScrollLink 
                to="testmonial"  
                   spy={true}
@@ -90,6 +106,34 @@ const Navbar = () => {
           </ScrollLink>
 
           
+          <ScrollLink 
+               to="how-to-use"  
+                  spy={true}
+                  smooth={true}
+                  duration={1000}>
+          <div
+          
+             className="text-[#333] text-[20px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#8750F7] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-secondaryColor cursor-pointer"
+          >
+           Portfolio
+          </div>
+          </ScrollLink>
+
+          
+          <ScrollLink 
+               to="how-to-use"  
+                  spy={true}
+                  smooth={true}
+                  duration={1000}>
+          <div
+          
+             className="text-[#333] text-[20px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#8750F7] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-secondaryColor cursor-pointer"
+          >
+          blog
+          </div>
+          </ScrollLink>
+
+          
 
           <ScrollLink 
                to="pricing-plan"  
@@ -111,17 +155,18 @@ const Navbar = () => {
 
         <div className="flex items-center gap-5">
          
+       
+        
+        <button className="px-8 py-3 rounded-full bg-[#5B77F5] text-white text-[16px] font-normal flex justify-center items-center gap-4 ">
+      <span>Let's Talk</span>
+      <MdArrowOutward className="size-5" />
+        </button>
+
         <button onClick={openDrawer}>
         <FiMenu className="size-7 text-black" />
         </button>
         <Sidebar isOpen={isDrawerOpen} onClose={closeDrawer}/>
      
-        
-        {/* <button className="px-8 py-2 rounded-full bg-[#8750F7] text-white text-[16px] font-normal flex justify-center items-center gap-4 relative overflow-hidden group">
-      <span>resume</span>
-      <HiOutlineArrowDownTray className="transform transition-transform duration-300 translate-y-0 group-hover:translate-y-full group-hover:opacity-0" />
-        <HiOutlineArrowDownTray className="transform transition-transform duration-300 -translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100" />
-        </button> */}
 
 
           

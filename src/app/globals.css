@@ -3,7 +3,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@media screen and (min-width: 1024px) {
+  .slick-slide div {
+    margin: 0 13px;
+  }
+}
 
+@media screen and (min-width: 600px) {
+  .slick-slide div {
+    margin: 0 13px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .slick-slide div {
+    margin: 0 6px;
+  }
+}
+
+@media screen and (min-width: 350px) {
+  .slick-slide div {
+    margin: 0 6px;
+  }
+}
 
 
 @layer base {
