@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Hasibul_Portfolio",
-  description: "Hasibul_Portfolio for personal uses",
+  description: "Hasibul Portfolio for personal uses",
 };
 
 export default function RootLayout({
