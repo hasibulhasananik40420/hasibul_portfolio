@@ -12,15 +12,8 @@ import { BsArrowUpRight } from "react-icons/bs";
 const Navbar = () => {
     
   const [isFixed, setIsFixed] = useState(false);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
-  const openDrawer = () => {
-    setIsDrawerOpen(true)
-  }
 
-  const closeDrawer = () => {
-    setIsDrawerOpen(false)
-  }
 
   const handleScroll = () => {
     const scrollThreshold = 200;
