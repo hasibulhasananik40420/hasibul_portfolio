@@ -61,7 +61,11 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+
+		  backgroundImage: {
+			"custom-image": "url('https://flixta.rstheme.com/wp-content/uploads/2024/05/ultimate-team-bg.webp')", // Add your image URL here
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate")],

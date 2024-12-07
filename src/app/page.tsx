@@ -1,3 +1,4 @@
+import AboutMe from "@/components/AboutMe/AboutMe"
 import Blogs from "@/components/Blogs/Blogs"
 import ClientReview from "@/components/ClientReview/ClientReview"
 import Contact from "@/components/Contact/Contact"
@@ -11,8 +12,12 @@ import Banner from "@/components/ui/Banner"
 const HomePage = () => {
   return (
     <div className="">
-      <Navbar/>
-      <Banner/>
+       <div className="bg-custom-image bg-no-repeat bg-cover min-h-screen">
+       <Navbar/>
+       <Banner/>
+       </div>
+      <AboutMe/>
+    
       <Service/>
       <Projects/>
       <Skills/>

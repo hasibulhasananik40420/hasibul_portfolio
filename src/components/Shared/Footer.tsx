@@ -12,7 +12,7 @@ import { FaTelegramPlane } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-[#F1F4FF]">
       <div className="max-w-7xl mx-auto md:py-[100px] py-16 px-3 md:px-6 lg:px-2">
           <div className="flex flex-wrap justify-between justify-items-center w-full">
 
@@ -21,9 +21,9 @@ const Footer = () => {
 
                 <h2 className="text-black font-bold text-[40px] leading-12">Get Ready <span className="font-normal">to Create Grate</span></h2>
            
-                <div className="relative w-full mt-6">
-                <input className="w-full pb-4 outline-0 border-b-[1px] border-b-black text-[16px] font-normal" type="email" placeholder="Email Address"/>
-                <SiMinutemailer className="size-6 text-black hover:text-red-500 duration-300 absolute top-0 right-0 cursor-pointer" />
+                <div className="relative w-full mt-6 ">
+                <input className="w-full bg-[#F1F4FF] pb-4 outline-0 border-b-[1px] border-b-black text-[16px] font-normal" type="email" placeholder="Email Address"/>
+                <SiMinutemailer className="size-6 text-black hover:text-[#5B77F5] duration-300 absolute top-0 right-0 cursor-pointer" />
                 </div>
             </div>
 
@@ -85,28 +85,28 @@ const Footer = () => {
                    <div>
                    <span className="size-9 rounded-md bg-white shadow-lg border text-black hover:text-white flex justify-center items-center cursor-pointer relative overflow-hidden group">
                     <FaFacebookF className="size-5 z-10"/>
-                    <span className="absolute inset-0 bg-[#8650F7] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
+                    <span className="absolute inset-0 bg-[#5B77F5] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
 
                     </span>
                    </div>
                    <div>
                    <span className="size-9 rounded-md bg-white shadow-lg border text-black hover:text-white flex justify-center items-center cursor-pointer relative overflow-hidden group">
                     <FaXTwitter className="size-5 z-10"/>
-                    <span className="absolute inset-0 bg-[#8650F7] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
+                    <span className="absolute inset-0 bg-[#5B77F5] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
 
                     </span>
                    </div>
                    <div>
                    <span className="size-9 rounded-md bg-white shadow-lg border text-black hover:text-white flex justify-center items-center cursor-pointer relative overflow-hidden group">
                     <FaInstagram className="size-5 z-10"/>
-                    <span className="absolute inset-0 bg-[#8650F7] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
+                    <span className="absolute inset-0 bg-[#5B77F5] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
 
                     </span>
                    </div>
                    <div>
                    <span className=" size-9 rounded-md bg-white shadow-lg border text-black hover:text-white flex justify-center items-center cursor-pointer relative overflow-hidden group">
                     <FaSlack className="size-5 z-10"/>
-                    <span className="absolute inset-0 bg-[#8650F7] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
+                    <span className="absolute inset-0 bg-[#5B77F5] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
                     </span>
                     
                    </div>
@@ -114,7 +114,7 @@ const Footer = () => {
                   
                     <span className=" size-9 rounded-md bg-white shadow-lg border text-black hover:text-white flex justify-center items-center cursor-pointer relative overflow-hidden group">
                  <FaTelegramPlane className="size-5 z-10" />
-                <span className="absolute inset-0 bg-[#8650F7] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
+                <span className="absolute inset-0 bg-[#5B77F5] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
                 </span>
                    </div>
                    </div>

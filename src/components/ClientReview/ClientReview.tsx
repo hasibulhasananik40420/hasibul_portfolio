@@ -10,11 +10,12 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useRef } from "react";
 
+
 const ClientReview = () => {
 
   const sliderRef = useRef<Slider | null>(null);
   const settings = {
-    dots: true,
+    dots: false,
     arrows: false,
     autoplay: true,
     infinite: true,
@@ -74,7 +75,7 @@ const ClientReview = () => {
 
 
   return (
-    <div className="bg-[#ECF0F3]">
+    <div className="bg-[#F9FAFF]">
         <div className="max-w-7xl mx-auto md:py-[100px] py-16 px-3 md:px-6 lg:px-2">
         <div className="md:flex justify-between items-center w-full">
                 <div>

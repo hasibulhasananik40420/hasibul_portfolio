@@ -6,7 +6,7 @@ const Projects = () => {
   
   
   return (
-    <div className='bg-[#ECF0F3]'>
+    <div className='bg-[#ECF0F3]' id="portfolio">
         <div className="max-w-7xl mx-auto md:py-[100px] py-16 px-3 md:px-6 lg:px-2">
         <div>
                     <p className="text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase">RECENT PROJECTS</p>

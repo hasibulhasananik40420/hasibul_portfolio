@@ -5,7 +5,7 @@ import { MdOutlineArrowOutward } from "react-icons/md"
 
 const Blogs = () => {
   return (
-    <div className="bg-[#F4F4F4]">
+    <div className="bg-white" id="blog">
         <div className="max-w-7xl mx-auto md:py-[100px] py-16 px-3 md:px-6 lg:px-2">
             <div className="md:flex justify-between items-center">
                 <div>
@@ -22,7 +22,7 @@ const Blogs = () => {
 
 
              <div className="mt-[40px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
-             <div className="bg-white w-full rounded-md shadow">
+             <div className="bg-[#F9FAFF] w-full rounded-md shadow">
                  <div className="relative">
                  <Image className="" src='https://img.freepik.com/premium-photo/teamwork-concept_700248-21418.jpg?w=740' width={500} height={500} layout="responsive"
                priority
@@ -60,7 +60,7 @@ const Blogs = () => {
               
               
                 <div className="flex flex-col gap-[30px]">
-                <div className="bg-white w-full rounded-md shadow h-full">
+                <div className="bg-[#F9FAFF] w-full rounded-md shadow h-full">
                 
 
                 <div className="px-4 py-7">
@@ -88,7 +88,7 @@ const Blogs = () => {
             </div> 
              
 
-            <div className="bg-white w-full rounded-md shadow h-full">
+            <div className="bg-[#F9FAFF] w-full rounded-md shadow h-full">
                 
 
                 <div className="px-4 py-7">
@@ -119,7 +119,7 @@ const Blogs = () => {
                 </div>
               
               
-               <div className="bg-white w-full rounded-md shadow">
+               <div className="bg-[#F9FAFF] w-full rounded-md shadow">
                  <div className="relative">
                  <Image className="" src='https://img.freepik.com/free-photo/front-view-young-beautiful-businesswoman-black-shirt-black-jacket-along-with-young-man-using-her-silver-laptop-discussing-issues-inside-her-office-work-job-building_140725-16293.jpg?ga=GA1.1.1166836568.1647150580&semt=ais_hybrid' width={500} height={500} layout="responsive"
                priority

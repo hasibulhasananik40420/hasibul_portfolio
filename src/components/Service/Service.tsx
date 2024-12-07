@@ -10,7 +10,7 @@ import { MdArrowOutward } from "react-icons/md";
 
 const Service = () => {
   return (
-    <div className="bg-[#F4F4F4]">
+    <div className="bg-[#F9FAFF]" id="service">
         <div className="max-w-7xl mx-auto md:py-[100px] py-16 px-3 md:px-6 lg:px-2">
         <div>
                     <p className="text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase">My Specialization</p>
@@ -103,10 +103,10 @@ const Service = () => {
                 </div>
 
                  <div className="flex justify-center mt-10">
-                 <button className="bg-[#5B77F5] rounded-md h-[50px] px-6 text-white text-[18px] font-medium flex justify-center items-center gap-3">
+                 <button className="bg-[#5B77F5] rounded-md h-[50px] px-6 text-white text-[18px] font-medium flex justify-center items-center gap-3 group">
 
                 See More
-               <MdArrowOutward className="size-5" />
+               <MdArrowOutward className="size-5 group-hover:rotate-45 duration-500" />
 
                </button>
                  </div>
