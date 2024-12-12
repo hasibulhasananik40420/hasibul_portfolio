@@ -11,7 +11,7 @@ import Marquee from "react-fast-marquee";
 
 const Skills = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-[#F9F9F9]">
         <div className="max-w-7xl mx-auto md:py-[100px] py-16 px-3 md:px-6 lg:px-2">
         <div>
                     <p className="text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase">My Skills</p>
@@ -143,7 +143,7 @@ const Skills = () => {
 
 
        <div className="lg:flex gap-20 mt-20">
-       <div className="bg-[#F9FAFF] rounded-md shadow p-6 w-full relative">
+       <div className="bg-white rounded-md shadow p-6 w-full relative">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">Educational Experience</h2>
 
         <div className="space-y-6">
@@ -187,7 +187,7 @@ const Skills = () => {
 
       
       
-       <div className="bg-[#F9FAFF] rounded-md shadow p-6 w-full relative mt-10 md:mt-16 lg:mt-0">
+       <div className="bg-white rounded-md shadow p-6 w-full relative mt-10 md:mt-16 lg:mt-0">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">Job Experience</h2>
 
         <div className="space-y-6">

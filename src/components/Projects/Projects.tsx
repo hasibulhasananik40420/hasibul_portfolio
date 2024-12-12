@@ -15,20 +15,20 @@ const Projects = () => {
 
 
                 <div className='mt-10'>
-                <div className='border rounded-md shadow p-6 h-[600px]'>
+                <div className='border rounded-md shadow p-6 h-[200px]'>
                    e
                 </div>
 
                 
-                <div className='border rounded-md shadow p-6 h-[600px]'>
+                <div className='border rounded-md shadow p-6 h-[200px]'>
                    e
                 </div>
 
-                <div className='border rounded-md shadow p-6 h-[600px]'>
+                <div className='border rounded-md shadow p-6 h-[200px]'>
                    e
                 </div>
 
-                <div className='border rounded-md shadow p-6 h-[600px]'>
+                <div className='border rounded-md shadow p-6 h-[200px]'>
                    e
                 </div>
 

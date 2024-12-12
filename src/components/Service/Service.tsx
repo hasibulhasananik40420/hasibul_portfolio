@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import javascript from "@/assets/internet_10003015.png"
 import figma from "@/assets/figma.svg"
@@ -7,14 +8,47 @@ import payment from "@/assets/money_14872998.png"
 import database from "@/assets/data-server_9698472.png"
 import effect from "@/assets/locomotion.svg"
 import { MdArrowOutward } from "react-icons/md";
+import { useEffect, useRef } from "react"
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 const Service = () => {
+
+  const containerRef = useRef(null);
+  const lineRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+
+  useEffect(() => {
+    const lines = lineRefs.current;
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        markers: false,
+      },
+    })
+      .fromTo(
+        lines,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.4,
+          ease: "power3.out",
+        }
+      );
+  }, []);
+   
   return (
     <div className="bg-[#F9FAFF]" id="service">
         <div className="max-w-7xl mx-auto md:py-[100px] py-16 px-3 md:px-6 lg:px-2">
-        <div>
-                    <p className="text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase">My Specialization</p>
-                     <h1 className="md:text-[46px] text-[32px] font-bold text-black">What My Services</h1>
+        <div ref={containerRef}>
+                    <p  ref={(el) => {if (el) { lineRefs.current[0] = el}}} className="text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase">My Specialization</p>
+                     <h1 ref={(el) => {if (el) { lineRefs.current[1] = el}}} className="md:text-[46px] text-[32px] font-bold text-black">What My Services</h1>
                 </div>
 
 

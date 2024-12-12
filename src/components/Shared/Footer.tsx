@@ -44,7 +44,7 @@ const Footer = () => {
              </div>
 
 
-             <div className="md:w-[400px] w-full mt-10 md:mt-0">
+             <div className="md:w-[400px] w-full mt-10 md:mt-10 lg:mt-0">
                <h3 className="text-[24px] font-medium text-black">Contact</h3>
                 <div className="flex flex-col gap-3 mt-5">
                    <div className="flex items-center gap-3">

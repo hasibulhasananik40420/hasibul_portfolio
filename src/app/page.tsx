@@ -12,13 +12,14 @@ import Banner from "@/components/ui/Banner"
 const HomePage = () => {
   return (
     <div className="">
-       <div className="bg-custom-image bg-no-repeat bg-cover min-h-screen">
+       <div className="bg-custom-image bg-[#F9F9F9] bg-no-repeat bg-cover bg-center min-h-screen" id="home">
        <Navbar/>
        <Banner/>
        </div>
+       <Service/>
       <AboutMe/>
     
-      <Service/>
+     
       <Projects/>
       <Skills/>
       <ClientReview/>

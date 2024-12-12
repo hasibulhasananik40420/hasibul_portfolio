@@ -7,6 +7,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import logo from "@/assets/photo_2024-12-06_21-40-58-removebg-preview (1).png"
 import Image from "next/image";
 import { BsArrowUpRight } from "react-icons/bs";
+import MobileSidebar from "../MobileSidebar/MobileSidebar";
 
 
 const Navbar = () => {
@@ -43,14 +44,14 @@ const Navbar = () => {
        <div className="lg:block hidden">
      
         <div className={`!z-[9999999] w-full transition-all duration-300 ease-in-out ${isFixed ? 'bg-white fixed top-0 shadow-navShadow' : ''}`}>
-        <div className={`max-w-7xl mx-auto  flex justify-between items-center px-4 h-[16vh] w-full`}>
+        <div className={`max-w-7xl mx-auto  flex justify-between items-center px-4 md:h-[16vh] h-[10vh] w-full`}>
         <div className=" -ml-8">
           
          <Image className=" w-[100px] h-[100px]" src={logo} alt="hasibul portfilo"/>
 
         </div>
 
-        <div className="flex items-center gap-[38px] 2xl:gap-[48px]">
+        <div className="flex items-center gap-[38px]">
           
         <ScrollLink 
                to="home"  
@@ -153,11 +154,7 @@ const Navbar = () => {
       <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
         </button>
 
-        {/* <button onClick={openDrawer}>
-        <FiMenu className="size-7 text-black" />
-        </button>
-        <Sidebar isOpen={isDrawerOpen} onClose={closeDrawer}/>
-      */}
+    
 
 
           
@@ -171,8 +168,8 @@ const Navbar = () => {
         
        
 
-       <div className=' lg:hidden block'>
-         {/* <MobileSidebar/> */}
+       <div className='lg:hidden block'>
+         <MobileSidebar/>
        </div>
      </div>
   );
