@@ -149,7 +149,7 @@ const Navbar = () => {
          
        
         
-        <button className="px-6 py-4 rounded-[30px] bg-[#5B77F5] text-white text-[16px] font-normal flex justify-center items-center gap-4 group">
+        <button className="px-6 py-4 rounded-[6px] bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] text-white text-[16px] font-normal flex justify-center items-center gap-4 group">
       <span>Let's Talk</span>
       <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
         </button>

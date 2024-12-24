@@ -1,6 +1,7 @@
 import AboutMe from "@/components/AboutMe/AboutMe"
 import Blogs from "@/components/Blogs/Blogs"
 import ClientReview from "@/components/ClientReview/ClientReview"
+import Collaborate from "@/components/Collaborate/Collaborate"
 import Contact from "@/components/Contact/Contact"
 import Projects from "@/components/Projects/Projects"
 import Service from "@/components/Service/Service"
@@ -23,6 +24,7 @@ const HomePage = () => {
       <Projects/>
       <Skills/>
       <ClientReview/>
+      <Collaborate/>
       <Blogs/>
        <Contact/>
        <Footer/>

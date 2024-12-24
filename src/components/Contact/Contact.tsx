@@ -22,7 +22,7 @@ const Contact = () => {
               <input className="w-full bg-transparent pb-4 outline-0 border-b-[1px] border-b-black text-[16px] font-normal focus:boorder-b-[1px] focus:border-b-[#5B77F5]" type="text" placeholder="Phone Number"/>
               <input className="w-full bg-transparent pb-32 outline-0 border-b-[1px] border-b-black text-[16px] font-normal focus:boorder-b-[1px] focus:border-b-[#5B77F5]" type="text" placeholder="Message"/>
 
-               <button className="bg-[#5B77F5] rounded-md w-[220px] h-[50px] px-6 text-white text-[18px] font-medium flex items-center gap-3 group">
+               <button className="bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] rounded-md w-[220px] py-4 px-6 text-white text-[18px] font-medium flex items-center gap-3 group">
 
                  Send Message
                  <MdArrowOutward className="size-5 group-hover:rotate-45 duration-500" />

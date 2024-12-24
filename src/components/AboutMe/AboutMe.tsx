@@ -23,7 +23,7 @@ const AboutMe = () => {
 
 
                         <div className="mt-9">
-                        <button className="px-6 py-4 rounded-md bg-[#5B77F5] text-white text-[18px] font-normal flex justify-center items-center gap-4 ">
+                        <button className="px-6 py-4 rounded-md bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] text-white text-[18px] font-normal flex justify-center items-center gap-4 ">
       <span>Download Resume</span>
       <RxDownload className="size-5" />
         </button>

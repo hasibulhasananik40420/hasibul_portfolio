@@ -137,7 +137,7 @@ const Service = () => {
                 </div>
 
                  <div className="flex justify-center mt-10">
-                 <button className="bg-[#5B77F5] rounded-md h-[50px] px-6 text-white text-[18px] font-medium flex justify-center items-center gap-3 group">
+                 <button className="bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] rounded-md py-4 px-6 text-white text-[18px] font-medium flex justify-center items-center gap-3 group">
 
                 See More
                <MdArrowOutward className="size-5 group-hover:rotate-45 duration-500" />

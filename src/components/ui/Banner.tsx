@@ -57,10 +57,12 @@ const Banner = () => {
     <p className="text-[#666] md:text-[22px] text-[18px] text-center md:text-left font-normal mt-5 md:leading-9 leading-7">I build fast, responsive websites with React.js and Next.js, focusing on performance and SEO optimization.</p>
      
        <div className='md:flex items-center gap-8 mt-9 '>
-       <button className="px-6 py-4 rounded-md bg-[#5B77F5] mx-auto md:mx-0 text-white text-[16px] font-normal flex justify-center items-center gap-4 group">
+       <button className="px-6 py-4 rounded-md bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] mx-auto md:mx-0 text-white text-[16px] font-normal flex justify-center items-center gap-4 group">
       <span>Hire Me Now</span>
       <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
         </button>
+
+
 
 
         <div className="flex items-center justify-center md:justify-start gap-4 md:mt-0 mt-6">
