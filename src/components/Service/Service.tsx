@@ -44,7 +44,7 @@ const Service = () => {
   }, []);
    
   return (
-    <div className="bg-[#F9FAFF]" id="service">
+    <div className="bg2" id="service">
         <div className="max-w-7xl mx-auto md:py-[100px] py-16 px-3 md:px-6 lg:px-2">
         <div ref={containerRef}>
                     <p  ref={(el) => {if (el) { lineRefs.current[0] = el}}} className="text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase">My Specialization</p>

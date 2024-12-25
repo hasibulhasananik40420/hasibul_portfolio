@@ -15,6 +15,18 @@ const MobileSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const sidebarRef = useRef(null);
 
+  const [activeLink, setActiveLink] = useState("home");
+
+  const navItems = [
+    { to: "home", label: "Home" },
+   
+    { to: "service", label: "Services" },
+    { to: "about", label: "About" },
+    { to: "portfolio", label: "Portfolio" },
+    { to: "blog", label: "Blog" },
+    { to: "contact", label: "Contact" },
+  ];
+
   useEffect(() => {
     if (isOpen) {
       gsap.to(sidebarRef.current, {
@@ -71,7 +83,7 @@ const MobileSidebar = () => {
 
      <div>
        <div className="flex items-center gap-4">
-       <button className="px-4 py-3 rounded-[30px] bg-[#5B77F5] text-white text-[14px] font-normal flex justify-center items-center gap-4 group">
+       <button className="px-4 py-2 rounded-[6px] bg-[#5B77F5] text-white text-[14px] font-normal flex justify-center items-center gap-4 group">
       <span>Let's Talk</span>
       <BsArrowUpRight className="size-4 group-hover:rotate-45 duration-500" />
         </button>
@@ -98,96 +110,32 @@ const MobileSidebar = () => {
 
 
          <div className="flex flex-col gap-6 ml-5 pt-10">
-          
-          <ScrollLink 
-                 to="home"  
-                    spy={true}
-                    smooth={true}
-                    duration={1000}>
-            <div
-              className="text-[#333] text-[18px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#5B77F5] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5] cursor-pointer"
-            >
-              Home
-            </div>
-            </ScrollLink>
-  
-  
-          <ScrollLink 
-                 to="about"  
-                    spy={true}
-                    smooth={true}
-                    duration={1000}>
-            <div
-              className="text-[#333] text-[18px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#5B77F5] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5] cursor-pointer"
-            >
-              About
-            </div>
-            </ScrollLink>
-  
-  
-  
-             
-          
-  
-  
-            <ScrollLink 
-                 to="service"  
-                    spy={true}
-                    smooth={true}
-                    duration={1000}>
-            <div
-            
-               className="text-[#333] text-[18px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#5B77F5] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5] cursor-pointer"
-            >
-             Services
-            </div>
-            </ScrollLink>
-  
-            
-            <ScrollLink 
-                 to="portfolio"  
-                    spy={true}
-                    smooth={true}
-                    duration={1000}>
-            <div
-            
-               className="text-[#333] text-[18px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#5B77F5] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5] cursor-pointer"
-            >
-             Portfolio
-            </div>
-            </ScrollLink>
-  
-            
-            <ScrollLink 
-                 to="blog"  
-                    spy={true}
-                    smooth={true}
-                    duration={1000}>
-            <div
-            
-               className="text-[#333] text-[18px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#5B77F5] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5] cursor-pointer"
-            >
-            blog
-            </div>
-            </ScrollLink>
-  
-            
-  
-            <ScrollLink 
-                 to="contact"  
-                    spy={true}
-                    smooth={true}
-                    duration={1000}>
-             <div
-           
-              className="text-[#333] text-[18px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#5B77F5] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5] cursor-pointer"
-            >
-              Contact
-            </div>
-            </ScrollLink>
-  
-           
+      {navItems.map((item) => (
+        <ScrollLink
+          key={item.to}
+          to={item.to}
+          spy={true}
+          smooth={true}
+          duration={1000}
+          onSetActive={() => setActiveLink(item.to)}
+        >
+          <div
+            className={`text-[18px] font-medium relative inline-block cursor-pointer
+            ${activeLink === item.to ? "text-[#5B77F5]" : "text-[#333]"}
+            after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] 
+            after:bg-[#5B77F5] 
+            ${activeLink === item.to ? "after:scale-x-100 after:origin-left" : "after:scale-x-0 after:origin-right"} 
+            after:transition-transform after:duration-500
+            hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5]`}
+          >
+            {item.label}
           </div>
+        </ScrollLink>
+      ))}
+    </div>
+
+
+        
        
       </div>
 

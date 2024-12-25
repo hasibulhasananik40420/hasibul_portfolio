@@ -3,8 +3,7 @@
 import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import { BsArrowUpRight } from "react-icons/bs";
-import { FaFacebookF } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaSlack } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
@@ -75,7 +74,7 @@ const Banner = () => {
                    </div>
                    <div>
                    <span className="size-9 rounded-md bg-white shadow-lg border text-[#5B77F5] hover:text-white flex justify-center items-center cursor-pointer relative overflow-hidden group">
-                    <FaXTwitter className="size-5 z-10"/>
+                    <FaGithub className="size-5 z-10"/>
                     <span className="absolute inset-0 bg-[#5B77F5] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
 
                     </span>

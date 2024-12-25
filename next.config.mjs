@@ -6,6 +6,7 @@ const nextConfig = {
           'gerold.themejunction.net', // Add Freepik's domain
           'flixta.rstheme.com', // Add Freepik's domain
           'images.unsplash.com', // Add Freepik's domain
+          'jackcreative.staticmania.com',
           
         ],
       },

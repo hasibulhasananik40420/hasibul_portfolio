@@ -7,8 +7,8 @@ import hasibul from '@/assets/Anik Image.png'
 
 const AboutMe = () => {
   return (
-    <div className="bg-[#F9F9F9]" id="about">
-        <div className="max-w-7xl mx-auto md:py-[100px] py-16 px-3 md:px-6 lg:px-2">
+    <div className="bg-[#F9F9F9]" style={{background:"linear-gradient(180deg, #E3F8FF 0%, #FFFFFF 100%)"}} id="about">
+        <div className="max-w-7xl mx-auto md:pt-[100px] pt-16 px-3 md:px-6 lg:px-2">
                <div className="lg:flex flex-row-reverse justify-between">
                <div className="lg:w-[50%] w-full">
                     <p className=" text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase">About Me</p>

@@ -14,6 +14,18 @@ const Navbar = () => {
     
   const [isFixed, setIsFixed] = useState(false);
 
+  const [activeLink, setActiveLink] = useState("home");
+
+  const navItems = [
+    { to: "home", label: "Home" },
+   
+    { to: "service", label: "Services" },
+    { to: "about", label: "About" },
+    { to: "portfolio", label: "Portfolio" },
+    { to: "blog", label: "Blog" },
+    { to: "contact", label: "Contact" },
+  ];
+
 
 
   const handleScroll = () => {
@@ -51,97 +63,32 @@ const Navbar = () => {
 
         </div>
 
-        <div className="flex items-center gap-[38px]">
-          
-        <ScrollLink 
-               to="home"  
-                  spy={true}
-                  smooth={true}
-                  duration={1000}>
+       
+
+<div className="flex items-center gap-[38px]">
+      {navItems.map((item) => (
+        <ScrollLink
+          key={item.to}
+          to={item.to}
+          spy={true}
+          smooth={true}
+          duration={1000}
+          onSetActive={() => setActiveLink(item.to)}
+        >
           <div
-            className="text-[#333] text-[18px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#5B77F5] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5] cursor-pointer"
+            className={`text-[18px] font-medium relative inline-block cursor-pointer
+            ${activeLink === item.to ? "text-[#5B77F5]" : "text-[#333]"}
+            after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] 
+            after:bg-[#5B77F5] 
+            ${activeLink === item.to ? "after:scale-x-100 after:origin-left" : "after:scale-x-0 after:origin-right"} 
+            after:transition-transform after:duration-500
+            hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5]`}
           >
-            Home
+            {item.label}
           </div>
-          </ScrollLink>
-
-
-        <ScrollLink 
-               to="about"  
-                  spy={true}
-                  smooth={true}
-                  duration={1000}>
-          <div
-            className="text-[#333] text-[18px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#5B77F5] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5] cursor-pointer"
-          >
-            About
-          </div>
-          </ScrollLink>
-
-
-
-           
-        
-
-
-          <ScrollLink 
-               to="service"  
-                  spy={true}
-                  smooth={true}
-                  duration={1000}>
-          <div
-          
-             className="text-[#333] text-[18px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#5B77F5] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5] cursor-pointer"
-          >
-           Services
-          </div>
-          </ScrollLink>
-
-          
-          <ScrollLink 
-               to="portfolio"  
-                  spy={true}
-                  smooth={true}
-                  duration={1000}>
-          <div
-          
-             className="text-[#333] text-[18px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#5B77F5] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5] cursor-pointer"
-          >
-           Portfolio
-          </div>
-          </ScrollLink>
-
-          
-          <ScrollLink 
-               to="blog"  
-                  spy={true}
-                  smooth={true}
-                  duration={1000}>
-          <div
-          
-             className="text-[#333] text-[18px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#5B77F5] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5] cursor-pointer"
-          >
-          blog
-          </div>
-          </ScrollLink>
-
-          
-
-          <ScrollLink 
-               to="contact"  
-                  spy={true}
-                  smooth={true}
-                  duration={1000}>
-           <div
-         
-            className="text-[#333] text-[18px] font-medium relative inline-block after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#5B77F5] after:scale-x-0 after:origin-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5] cursor-pointer"
-          >
-            Contact
-          </div>
-          </ScrollLink>
-
-         
-        </div>
+        </ScrollLink>
+      ))}
+    </div>
 
 
 
