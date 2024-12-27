@@ -8,10 +8,89 @@ import { FaStar } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 const ClientReview = () => {
+
+
+  const containerRef = useRef(null);
+  const lineRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+  const card1Ref = useRef(null);
+  const card2Ref = useRef(null);
+  const card3Ref = useRef(null);
+  const card4Ref = useRef(null);
+
+  useEffect(() => {
+    const lines = lineRefs.current;
+
+    const cards = [
+      card1Ref.current,
+      card2Ref.current,
+      card3Ref.current,
+      card4Ref.current,
+     
+    ];
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        markers: false,
+      },
+    })
+      .fromTo(
+        lines,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.4,
+          ease: "power3.out",
+        }
+      );
+
+
+    gsap.fromTo(
+      cards,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: cards,
+          start: "top 80%",
+        },
+      }
+    );
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        markers: false,
+      },
+    })
+      .fromTo(
+        lines,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.4,
+          ease: "power3.out",
+        }
+      );
+  }, []);
 
   const sliderRef = useRef<Slider | null>(null);
   const settings = {
@@ -78,9 +157,9 @@ const ClientReview = () => {
     <div className="bg-[#F9FAFF]">
         <div className="max-w-7xl mx-auto md:py-[100px] py-16 px-3 md:px-6 lg:px-2">
         <div className="md:flex justify-between items-center w-full">
-                <div>
-                    <p className="text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase">Testmonials</p>
-                     <h1 className="md:text-[46px] text-[32px] font-bold text-black">My Clients Feedback</h1>
+                <div ref={containerRef}>
+                    <p ref={(el) => {if (el) { lineRefs.current[0] = el}}} className="text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase">Testmonials</p>
+                     <h1 ref={(el) => {if (el) { lineRefs.current[1] = el}}} className="md:text-[46px] text-[32px] font-bold text-black">My Clients Feedback</h1>
                 </div>
 
                  <div className="flex items-center gap-6">
@@ -198,22 +277,22 @@ const ClientReview = () => {
 
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center mt-16">
-                <div className="bg-white w-full shadow rounded px-14 py-8 flex flex-col justify-center items-center hover:bg-[#5B77F5] duration-300 cursor-pointer group">
+                <div ref={card1Ref} className="bg-white w-full shadow rounded px-14 py-8 flex flex-col justify-center items-center hover:bg-[#5B77F5] duration-300 cursor-pointer group">
                   <h3 className="md:text-[40px] text-[32px] font-bold text-black group-hover:text-white">120k</h3>
                    <h5 className="text-[18px] font-normal text-[#C0C2C3] mt-3 group-hover:text-white">Compleated Project</h5>
                 </div>
                 
-                <div className="bg-white w-full shadow rounded px-14 py-8 flex flex-col justify-center items-center hover:bg-[#5B77F5] duration-300 cursor-pointer group">
+                <div ref={card2Ref} className="bg-white w-full shadow rounded px-14 py-8 flex flex-col justify-center items-center hover:bg-[#5B77F5] duration-300 cursor-pointer group">
                   <h3 className="md:text-[40px] text-[32px] font-bold text-black group-hover:text-white">130M</h3>
                    <h5 className="text-[18px] font-normal text-[#C0C2C3] mt-3 group-hover:text-white">Cup of Tea</h5>
                 </div>
 
-                <div className="bg-white w-full shadow rounded px-14 py-8 flex flex-col justify-center items-center hover:bg-[#5B77F5] duration-300 cursor-pointer group">
-                  <h3 className="md:text-[40px] text-[32px] font-bold text-black group-hover:text-white">12M</h3>
-                   <h5 className="text-[18px] font-normal text-[#C0C2C3] mt-3 group-hover:text-white">Satisfied Customers</h5>
+                <div ref={card3Ref} className="w-full shadow rounded px-14 py-8 flex flex-col justify-center items-center bg-[#5B77F5] duration-300 cursor-pointer group">
+                  <h3 className="md:text-[40px] text-[32px] font-bold text-white">12M</h3>
+                   <h5 className="text-[18px] font-normal  mt-3 text-white">Satisfied Customers</h5>
                 </div>
 
-                <div className="bg-white w-full shadow rounded px-14 py-8 flex flex-col justify-center items-center hover:bg-[#5B77F5] duration-300 cursor-pointer group">
+                <div ref={card4Ref} className="bg-white w-full shadow rounded px-14 py-8 flex flex-col justify-center items-center hover:bg-[#5B77F5] duration-300 cursor-pointer group">
                   <h3 className="md:text-[40px] text-[32px] font-bold text-black group-hover:text-white">10k</h3>
                    <h5 className="text-[18px] font-normal text-[#C0C2C3] mt-3 group-hover:text-white">Running Projects</h5>
                 </div>

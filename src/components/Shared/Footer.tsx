@@ -21,10 +21,13 @@ const Footer = () => {
 
                 <h2 className="text-black font-bold text-[40px] leading-12">Get Ready <span className="font-normal">to Create Grate</span></h2>
            
-                <div className="relative w-full mt-6 ">
-                <input className="w-full bg-[#F1F4FF] pb-4 outline-0 border-b-[1px] border-b-black text-[16px] font-normal" type="email" placeholder="Email Address"/>
-                <SiMinutemailer className="size-6 text-black hover:text-[#5B77F5] duration-300 absolute top-0 right-0 cursor-pointer" />
-                </div>
+                <form action="https://formspree.io/f/mldrnjrz" method="post" className="relative w-full mt-6 ">
+                <input className="w-full bg-[#F1F4FF] pb-4 outline-0 border-b-[1px] border-b-black text-[16px] font-normal" type="email" name="email" id="email" placeholder="Email Address"/>
+                 <button type="submit">
+                 <SiMinutemailer className="size-6 text-black hover:text-[#5B77F5] duration-300 absolute top-0 right-0 cursor-pointer" />
+
+                 </button>
+                </form>
             </div>
 
 

@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import nextjs from "@/assets/nextjs.svg"
 import redux from "@/assets/redux.svg"
@@ -8,14 +9,73 @@ import bootstrap from "@/assets/bootstrap.svg"
 import github from "@/assets/github.svg"
 import figma from "@/assets/figma.svg"
 import Marquee from "react-fast-marquee";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 const Skills = () => {
+  const cardRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+  const containerRef = useRef(null);
+  const lineRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+  useEffect(() => {
+    const lines = lineRefs.current;
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        markers: false,
+      },
+    })
+      .fromTo(
+        lines,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.4,
+          ease: "power3.out",
+        }
+      );
+
+
+
+    gsap.fromTo(
+      cardRefs.current,
+      {
+        opacity: 0,
+        y: 50,
+        scale: 0.95,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.2,
+        ease: "power4.out",
+        stagger: 0.4,
+        scrollTrigger: {
+          trigger: cardRefs.current[0],
+          start: "top 85%",
+          end: "bottom 40%",
+        },
+      }
+    );
+
+
+  }, []);
+
+
   return (
     <div className="bg-[#F9F9F9]">
         <div className="max-w-7xl mx-auto md:py-[100px] py-16 px-3 md:px-6 lg:px-2">
-        <div>
-                    <p className="text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase">My Skills</p>
-                     <h1 className="md:text-[46px] text-[32px] font-bold text-black">My awesome Skills</h1>
+        <div ref={containerRef}>
+                    <p ref={(el) => {if (el) { lineRefs.current[0] = el}}} className="text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase">My Skills</p>
+                     <h1 ref={(el) => {if (el) { lineRefs.current[1] = el}}} className="md:text-[46px] text-[32px] font-bold text-black">My awesome Skills</h1>
                 </div>
 
                 <Marquee speed={100} gradient={false}>
@@ -143,7 +203,7 @@ const Skills = () => {
 
 
        <div className="lg:flex gap-20 mt-20">
-       <div className="bg-white rounded-md shadow p-6 w-full relative">
+       <div ref={(el) => {if (el) { cardRefs.current[0] = el}}} className="bg-white rounded-md shadow p-6 w-full relative">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">Educational Experience</h2>
 
         <div className="space-y-6">
@@ -187,7 +247,7 @@ const Skills = () => {
 
       
       
-       <div className="bg-white rounded-md shadow p-6 w-full relative mt-10 md:mt-16 lg:mt-0">
+       <div ref={(el) => {if (el) { cardRefs.current[1] = el}}} className="bg-white rounded-md shadow p-6 w-full relative mt-10 md:mt-16 lg:mt-0">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">Job Experience</h2>
 
         <div className="space-y-6">
