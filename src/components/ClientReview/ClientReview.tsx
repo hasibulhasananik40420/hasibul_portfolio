@@ -2,7 +2,6 @@
 import Image from "next/image"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import review from "@/assets/1.png"
-import review2 from "@/assets/3.png"
 import review3 from "@/assets/3.png"
 import { FaStar } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
@@ -162,18 +161,20 @@ const ClientReview = () => {
                      <h1 ref={(el) => {if (el) { lineRefs.current[1] = el}}} className="md:text-[46px] text-[32px] font-bold text-black">My Clients Feedback</h1>
                 </div>
 
+                 <div className="md:block hidden">
                  <div className="flex items-center gap-6">
 
-                 <button onClick={handlePrevClick} className="size-10 bg-white rounded-md flex justify-center items-center text-[#5B77F5]">
-                     <IoIosArrowBack className="size-6" />
-                     </button>
-                      
-                     <button onClick={handleNextClick} className="size-10 bg-[#5B77F5] rounded-md flex justify-center items-center text-white">
-                     <IoIosArrowForward className="size-6" />
-                     </button>
+<button onClick={handlePrevClick} className="size-10 bg-white rounded-md flex justify-center items-center text-[#5B77F5]">
+    <IoIosArrowBack className="size-6" />
+    </button>
+     
+    <button onClick={handleNextClick} className="size-10 bg-[#5B77F5] rounded-md flex justify-center items-center text-white">
+    <IoIosArrowForward className="size-6" />
+    </button>
 
-                       
+      
 
+</div>
                  </div>
 
                   
@@ -184,26 +185,27 @@ const ClientReview = () => {
           
             <div className="lg:w-[50%] w-full p-6 bg-white shadow  rounded md:!flex gap-6">
                 <div className="lg:w-[40%] md:w-[50%] w-full">
-                  <Image className="w-full lg:h-auto md:h-[400px] h-[260px] rounded" src={review} alt=""/>
+                  <Image className="w-full lg:h-[260px] md:h-[400px] h-[260px] rounded" src={review} alt=""/>
                 </div>
 
-                <div className="md:w-[60%] w-full md:mt-0 mt-5">
-                  <h2 className="lg:text-[24px] md:text-[32px] text-[24px] font-medium text-black">Web App Development                  </h2>
-                   <h5 className="text-[14px] md:text-[18px] lg:text-[14px] font-normal text-[#C0C2C3] mt-1">Via review: 12 Mar 2024 - 20 May 2024                   </h5>
-                   <p className="text-[14px] md:text-[18px] lg:text-[14px] font-normal text-[#C0C2C3] mt-4"> Hasibul delivered an exceptional web app for our business. His expertise in React.js and Node.js ensured a seamless user experience. The project was completed on time, with clean code and great communication throughout.</p>
-               
-                   <div className="flex items-center justify-between mt-5">
+                <div className="md:w-[60%] w-full md:pt-0 pt-5">
+                  <h2 className="lg:text-[24px] md:text-[32px] text-[20px] font-medium text-black">Web App Development                  </h2>
+                   <h5 className="text-[14px] md:text-[18px] lg:text-[14px] font-normal text-[#C0C2C3] mt-1">Via review: 12 Mar 2024 - 20 May 2024 </h5>
+                   <p className="text-[14px] md:text-[18px] lg:text-[14px] font-normal text-[#C0C2C3] mt-4 line-clamp-4">
+                   Hasibul delivered an exceptional web app for our business. His expertise in React.js and Node.js ensured a seamless user experience. The project was completed on time, with clean code and great communication throughout.
+                   </p>
+                   <div className="flex items-center justify-between pt-5">
                       <div>
-                        <h2 className="text-[18px] text-black font-medium">- Sarah Lee                        </h2>
+                        <h2 className="text-[18px] text-black font-medium">- Sarah Lee   </h2>
                          <h5 className="text-[14px] font-normal text-[#C0C2C3]">CTO at Webify</h5>
                      
                       </div>
-                      <div className="flex items-center gap-2">
-                      <FaStar className="size-6 text-yellow-700"/>
-                      <FaStar className="size-6 text-yellow-700"/>
-                      <FaStar className="size-6 text-yellow-700"/>
-                      <FaStar className="size-6 text-yellow-700"/>
-                      <FaStar className="size-6 text-yellow-700"/>
+                      <div className="flex items-center gap-2 pt-3 md:pt-0">
+                      <FaStar className="size-5 text-yellow-700"/>
+                      <FaStar className="size-5 text-yellow-700"/>
+                      <FaStar className="size-5 text-yellow-700"/>
+                      <FaStar className="size-5 text-yellow-700"/>
+                      <FaStar className="size-5 text-yellow-700"/>
 
                       </div>
                    </div>
@@ -214,26 +216,26 @@ const ClientReview = () => {
 
             <div className="lg:w-[50%] w-full p-6 bg-white shadow  rounded md:!flex gap-6">
                 <div className="lg:w-[40%] md:w-[50%] w-full">
-                  <Image className="w-full lg:h-auto md:h-[400px] h-[260px] rounded" src={review3} alt=""/>
+                  <Image className="w-full lg:h-[260px] md:h-[400px] h-[260px] rounded" src={review3} alt=""/>
                 </div>
 
-                <div className="md:w-[60%] w-full md:mt-0 mt-5">
-                  <h2 className="lg:text-[24px] md:text-[32px] text-[24px] font-medium text-black">SaaS Development                  </h2>
+                <div className="md:w-[60%] w-full md:pt-0 pt-5">
+                  <h2 className="lg:text-[24px] md:text-[32px] text-[20px] font-medium text-black">SaaS Development                  </h2>
                    <h5 className="text-[14px] md:text-[18px] lg:text-[14px] font-normal text-[#C0C2C3] mt-1">Via review: 10 Sep 2024 - 18 Nov 2024                   </h5>
-                   <p className="text-[14px] md:text-[18px] lg:text-[14px] font-normal text-[#C0C2C3] mt-4"> Hasibul created a powerful SaaS dashboard that transformed the way we manage our business operations. The design was not only visually appealing but also highly intuitive, making it easy for our team to navigate and use effectively from day one.</p>
+                   <p className="line-clamp-4 text-[14px] md:text-[18px] lg:text-[14px] font-normal text-[#C0C2C3] mt-4"> Hasibul created a powerful SaaS dashboard that transformed the way we manage our business operations. The design was not only visually appealing but also highly intuitive, making it easy for our team to navigate and use effectively from day one.</p>
                
-                   <div className="flex items-center justify-between mt-5">
+                   <div className="flex items-center justify-between pt-5">
                       <div>
                         <h2 className="text-[18px] text-black font-medium">- John Carter                        </h2>
                          <h5 className="text-[14px] font-normal text-[#C0C2C3]">COO at Cloud</h5>
                      
                       </div>
-                      <div className="flex items-center gap-2">
-                      <FaStar className="size-6 text-yellow-700"/>
-                      <FaStar className="size-6 text-yellow-700"/>
-                      <FaStar className="size-6 text-yellow-700"/>
-                      <FaStar className="size-6 text-yellow-700"/>
-                      <FaStar className="size-6 text-yellow-700"/>
+                      <div className="flex items-center gap-2 pt-3 md:pt-0">
+                      <FaStar className="size-5 text-yellow-700"/>
+                      <FaStar className="size-5 text-yellow-700"/>
+                      <FaStar className="size-5 text-yellow-700"/>
+                      <FaStar className="size-5 text-yellow-700"/>
+                      <FaStar className="size-5 text-yellow-700"/>
 
                       </div>
                    </div>
@@ -244,26 +246,26 @@ const ClientReview = () => {
         
             <div className="lg:w-[50%] w-full p-6 bg-white shadow  rounded md:!flex gap-6">
                 <div className="lg:w-[40%] md:w-[50%] w-full">
-                  <Image className="w-full lg:h-auto md:h-[400px] h-[260px] rounded" src={review2} alt=""/>
+                  <Image className="w-full lg:h-[260px] md:h-[400px] h-[260px] rounded" src={'https://img.freepik.com/premium-photo/man-plain-clothes_160672-13632.jpg?ga=GA1.1.1614087858.1731598115&semt=ais_hybrid'} width={200} height={200} alt=""/>
                 </div>
 
-                <div className="md:w-[60%] w-full md:mt-0 mt-5">
-                  <h2 className="lg:text-[24px] md:text-[32px] text-[24px] font-medium text-black">Chat Application               </h2>
+                <div className="md:w-[60%] w-full md:pt-0 pt-5">
+                  <h2 className="lg:text-[24px] md:text-[32px] text-[20px] font-medium text-black">Chat Application               </h2>
                    <h5 className="text-[14px] md:text-[18px] lg:text-[14px] font-normal text-[#C0C2C3] mt-1">Via review: 05 Aug 2024 - 15 Sep 2024                   </h5>
-                   <p className="text-[14px] md:text-[18px] lg:text-[14px] font-normal text-[#C0C2C3] mt-4"> Hasibul created a responsive and efficient real-time chat application using the MERN stack. His integration of WebSockets for instant messaging and a sleek UI made the project stand out.</p>
+                   <p className=" line-clamp-4 text-[14px] md:text-[18px] lg:text-[14px] font-normal text-[#C0C2C3] mt-4"> Hasibul created a responsive and efficient real-time chat application using the MERN stack. His integration of WebSockets for instant messaging and a sleek UI made the project stand out.</p>
                
-                   <div className="flex items-center justify-between mt-5">
+                   <div className="flex items-center justify-between pt-5">
                       <div>
                         <h2 className="text-[18px] text-black font-medium">- Sarah Lee</h2>
                          <h5 className="text-[14px] font-normal text-[#C0C2C3]">COO at pixzo.</h5>
                      
                       </div>
-                      <div className="flex items-center gap-2">
-                      <FaStar className="size-6 text-yellow-700"/>
-                      <FaStar className="size-6 text-yellow-700"/>
-                      <FaStar className="size-6 text-yellow-700"/>
-                      <FaStar className="size-6 text-yellow-700"/>
-                      <FaStar className="size-6 text-yellow-700"/>
+                      <div className="flex items-center gap-2 pt-3 md:pt-0">
+                      <FaStar className="size-5 text-yellow-700"/>
+                      <FaStar className="size-5 text-yellow-700"/>
+                      <FaStar className="size-5 text-yellow-700"/>
+                      <FaStar className="size-5 text-yellow-700"/>
+                      <FaStar className="size-5 text-yellow-700"/>
 
                       </div>
                    </div>
@@ -274,26 +276,40 @@ const ClientReview = () => {
         
             </Slider>
 
+            <div className="flex justify-center items-center gap-6 md:hidden block mt-8">
+
+<button onClick={handlePrevClick} className="size-10 bg-white rounded-md flex justify-center items-center text-[#5B77F5]">
+    <IoIosArrowBack className="size-6" />
+    </button>
+     
+    <button onClick={handleNextClick} className="size-10 bg-[#5B77F5] rounded-md flex justify-center items-center text-white">
+    <IoIosArrowForward className="size-6" />
+    </button>
+
+      
+
+</div>
+
 
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center mt-16">
                 <div ref={card1Ref} className="bg-white w-full shadow rounded px-14 py-8 flex flex-col justify-center items-center hover:bg-[#5B77F5] duration-300 cursor-pointer group">
-                  <h3 className="md:text-[40px] text-[32px] font-bold text-black group-hover:text-white">120k</h3>
+                  <h3 className="md:text-[40px] text-[32px] font-bold text-black group-hover:text-white">150+</h3>
                    <h5 className="text-[18px] font-normal text-[#C0C2C3] mt-3 group-hover:text-white">Compleated Project</h5>
                 </div>
                 
                 <div ref={card2Ref} className="bg-white w-full shadow rounded px-14 py-8 flex flex-col justify-center items-center hover:bg-[#5B77F5] duration-300 cursor-pointer group">
-                  <h3 className="md:text-[40px] text-[32px] font-bold text-black group-hover:text-white">130M</h3>
+                  <h3 className="md:text-[40px] text-[32px] font-bold text-black group-hover:text-white">130+</h3>
                    <h5 className="text-[18px] font-normal text-[#C0C2C3] mt-3 group-hover:text-white">Cup of Tea</h5>
                 </div>
 
                 <div ref={card3Ref} className="w-full shadow rounded px-14 py-8 flex flex-col justify-center items-center bg-[#5B77F5] duration-300 cursor-pointer group">
-                  <h3 className="md:text-[40px] text-[32px] font-bold text-white">12M</h3>
+                  <h3 className="md:text-[40px] text-[32px] font-bold text-white">48</h3>
                    <h5 className="text-[18px] font-normal  mt-3 text-white">Satisfied Customers</h5>
                 </div>
 
                 <div ref={card4Ref} className="bg-white w-full shadow rounded px-14 py-8 flex flex-col justify-center items-center hover:bg-[#5B77F5] duration-300 cursor-pointer group">
-                  <h3 className="md:text-[40px] text-[32px] font-bold text-black group-hover:text-white">10k</h3>
+                  <h3 className="md:text-[40px] text-[32px] font-bold text-black group-hover:text-white">10</h3>
                    <h5 className="text-[18px] font-normal text-[#C0C2C3] mt-3 group-hover:text-white">Running Projects</h5>
                 </div>
 

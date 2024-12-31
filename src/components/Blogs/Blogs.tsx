@@ -45,7 +45,7 @@ const Blogs = () => {
                      <h1 ref={(el) => {if (el) { lineRefs.current[1] = el}}} className="md:text-[46px] text-[32px] font-bold text-black">Our Latest Blog</h1>
                 </div>
 
-                 <div className="flex items-center gap-3">
+                 <div className="flex items-center gap-3 md:hidden lg:block">
                       <button className="md:size-14 size-10 bg-[#5B77F5] rounded-full flex justify-center items-center text-white"><MdOutlineArrowOutward className="size-6" />
                       </button>
                      <h3 className="text-[20px] font-medium text-black">View All News</h3>

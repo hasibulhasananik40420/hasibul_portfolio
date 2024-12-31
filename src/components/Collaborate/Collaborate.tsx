@@ -84,12 +84,14 @@ const Collaborate = () => {
         </h5>
 
         <div ref={buttonRef} className="flex justify-center items-center gap-5 mt-8">
-          <button className="bg-[#3730A3] md:px-6 px-4 py-3 md:py-3 rounded text-[14px] font-medium text-white">
+           <a href="https://wa.me/qr/SYZJMRDCTMOBP1"target="_blank" rel="noopener noreferrer">
+           <button className="bg-[#3730A3] md:px-6 px-4 py-3 md:py-3 rounded text-[14px] font-medium text-white">
             Start a Project
-          </button>
-          <button className="bg-transparent md:px-6 px-4 py-[10px] md:py-[10px] rounded text-[14px] font-medium text-[#322E87] border-[2px] border-[#4338CA]">
+          </button></a>
+           <a href="https://github.com/hasibulhasananik40420" target="_blank" rel="noopener noreferrer">
+           <button className="bg-transparent md:px-6 px-4 py-[10px] md:py-[10px] rounded text-[14px] font-medium text-[#322E87] border-[2px] border-[#4338CA]">
             Explore my Art
-          </button>
+          </button></a>
         </div>
       </div>
     </div>

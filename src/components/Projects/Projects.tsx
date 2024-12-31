@@ -17,9 +17,23 @@ const Projects = () => {
 
   const containerRef = useRef(null);
   const lineRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+  const card1Ref = useRef(null);
+  const card2Ref = useRef(null);
+  const card3Ref = useRef(null);
+  const card4Ref = useRef(null);
+  const card5Ref = useRef(null);
+  const card6Ref = useRef(null);
 
   useEffect(() => {
     const lines = lineRefs.current;
+    const cards = [
+      card1Ref.current,
+      card2Ref.current,
+      card3Ref.current,
+      card4Ref.current,
+      card5Ref.current,
+      card6Ref.current,
+    ];
 
     gsap.timeline({
       scrollTrigger: {
@@ -39,6 +53,22 @@ const Projects = () => {
           ease: "power3.out",
         }
       );
+
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: cards,
+            start: "top 80%",
+          },
+        }
+      );
   }, []);
   
   return (
@@ -53,7 +83,7 @@ const Projects = () => {
 
                  <div className="flex flex-col gap-10 mt-10">
 
-                  <div className="bg-[#FEEFB5] rounded md:px-20 px-10 md:pt-20 pt-10 lg:h-[500px]">
+                  <div ref={card1Ref} className="bg-[#FEEFB5] rounded md:px-20 px-10 md:pt-20 pt-10 lg:h-[500px]">
                      <div className="lg:flex justify-between items-center">
                          <div className="lg:w-[30%] w-full">
                             <h1 className="md:text-[48px] text-[36px] md:w-[400px] w-full md:leading-[62px] leading-[50px]">Property Buy & Sell Hub 
@@ -84,7 +114,7 @@ const Projects = () => {
 
 
                    <div className="lg:flex gap-10">
-                   <div className="lg:w-[70%] w-full bg-[#E6F1FF] rounded md:px-10 px-5 md:pt-10 pt-5 lg:h-[400px]">
+                   <div ref={card2Ref} className="lg:w-[70%] w-full bg-[#E6F1FF] rounded md:px-10 px-5 md:pt-10 pt-5 lg:h-[400px]">
                      <div className="lg:flex justify-between items-center">
                          <div className="lg:w-[30%] w-full">
                             <h1 className="md:text-[30px] text-[24px] md:w-[400px] w-[270px]  font-semibold"> Protect Information <br /> From Hackers
@@ -116,7 +146,7 @@ const Projects = () => {
 
 
 
-                       <div className="lg:w-[30%] w-full relative mt-10 lg:mt-0">
+                       <div ref={card3Ref} className="lg:w-[30%] w-full relative mt-10 lg:mt-0">
                            <Image className="w-full h-[400px] rounded" src={chad} width={300} height={300} alt=""/>
                            
                             
@@ -148,7 +178,7 @@ const Projects = () => {
 
 
                    <div className="lg:flex flex-row-reverse gap-10">
-                   <div className="lg:w-[70%] w-full bg-[#565EF9] rounded md:px-10 px-5 md:pt-10 pt-5 lg:h-[400px]">
+                   <div ref={card4Ref} className="lg:w-[70%] w-full bg-[#565EF9] rounded md:px-10 px-5 md:pt-10 pt-5 lg:h-[400px]">
                      <div className="lg:flex justify-between items-center">
                          <div className="lg:w-[30%] w-full">
                             <h1 className="md:text-[30px] text-[24px] md:w-[400px] w-[270px] text-white font-semibold">Chad Smith Web Application Design
@@ -178,7 +208,7 @@ const Projects = () => {
 
 
 
-                       <div className="lg:w-[30%] w-full relative mt-10 lg:mt-0">
+                       <div ref={card5Ref} className="lg:w-[30%] w-full relative mt-10 lg:mt-0">
                            <Image className="w-full h-[400px] rounded" src={pixzo} width={300} height={300} alt=""/>
                            
                             

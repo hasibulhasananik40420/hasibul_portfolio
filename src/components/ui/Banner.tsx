@@ -189,9 +189,7 @@ const Banner = () => {
           className="md:text-[62px] text-[28px] text-center md:text-left text-[#05100B] font-bold lg:leading-[85px] md:leading-[95px]"
         >
           I'm Hasibul Hasan <br />
-          {/* <span className="font-extrabold md:text-[72px] text-[34px]">
-            Web <span className="text-[#5B77F5] md:text-[72px] text-[34px]">Developer</span>
-          </span> */}
+          
            <span className="font-extrabold md:text-[72px] text-[34px]">
         Web <span ref={wordRef} className="text-[#5B77F5] md:text-[72px] text-[34px]">
          {isDeveloper ? "Designer" : "Developer"}
@@ -204,27 +202,50 @@ const Banner = () => {
         </p>
 
         <div className="md:flex items-center gap-8 mt-9">
-          <button
-            ref={buttonRef}
-            className="px-6 py-4 rounded-md bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] mx-auto md:mx-0 text-white text-[16px] font-normal flex justify-center items-center gap-4 group"
-          >
-            <span>Hire Me Now</span>
-            <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
-          </button>
+         
+   <div className="flex justify-center md:flex md:justify-start">
 
-          <div
-            ref={socialIconsRef}
-            className="flex items-center justify-center md:justify-start gap-4 md:mt-0 mt-6"
-          >
-            {[FaFacebookF, FaGithub, FaInstagram, FaSlack, FaTelegramPlane].map((Icon, index) => (
-              <div key={index}>
-                <span className="size-9 rounded-md bg-white shadow-lg border text-[#5B77F5] hover:text-white flex justify-center items-center cursor-pointer relative overflow-hidden group">
-                  <Icon className="size-5 z-10" />
-                  <span className="absolute inset-0 bg-[#5B77F5] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
-                </span>
-              </div>
-            ))}
-          </div>
+<a href="https://wa.me/qr/SYZJMRDCTMOBP1" target="_blank" rel="noopener noreferrer">
+    <button ref={buttonRef} className="bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] relative group md:px-6 px-6 py-3 md:py-3 rounded text-[16px] font-semibold text-[#060A11] overflow-hidden">
+  <span className="text-white flex items-center justify-center gap-4 relative z-10 transition-all duration-500 ease-in-out group-hover:-translate-y-3 group-hover:opacity-0">
+   <p>Hire Me Now</p>
+  <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
+  </span>
+  
+  <div className="absolute inset-0 flex items-center justify-center gap-4 bg-[#4d68de] text-white scale-y-0 opacity-0 origin-bottom transition-all duration-500 ease-in-out group-hover:scale-y-100 group-hover:opacity-100">
+    <span className="text-[16px] font-semibold">Hire Me Now</span>
+    <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
+  </div>
+</button>
+</a>
+   </div>
+
+        
+<div
+  ref={socialIconsRef}
+  className="flex items-center justify-center md:justify-start gap-4 md:mt-0 mt-6"
+>
+  {[
+    { Icon: FaFacebookF, link: "https://www.facebook.com/share/18KaV2U6oK/" },
+    { Icon: FaGithub, link: "https://github.com/hasibulhasananik40420" },
+    { Icon: FaInstagram, link: "https://instagram.com" },
+    { Icon: FaSlack, link: "https://websitedesign-cs04486.slack.com/team/U066CK7Q0TD" },
+    { Icon: FaTelegramPlane, link: "https://t.me/hasibul40420" },
+  ].map(({ Icon, link }, index) => (
+    <a
+      key={index}
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="size-9 rounded-md bg-white shadow-lg border text-[#5B77F5] hover:text-white flex justify-center items-center cursor-pointer relative overflow-hidden group"
+    >
+      <span className="flex items-center justify-center">
+        <Icon className="size-5 z-10" />
+      </span>
+      <span className="absolute inset-0 bg-[#5B77F5] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center z-0"></span>
+    </a>
+  ))}
+</div>
 
            
           

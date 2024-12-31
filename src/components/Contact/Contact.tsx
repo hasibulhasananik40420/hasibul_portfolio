@@ -5,10 +5,10 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaSlack } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
-import { MdArrowOutward } from "react-icons/md";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { BsArrowUpRight } from "react-icons/bs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,12 +53,19 @@ const Contact = () => {
               <input className="w-full bg-transparent pb-4 outline-0 border-b-[1px] border-b-black text-[16px] font-normal focus:boorder-b-[1px] focus:border-b-[#5B77F5]" type="text" name="phone" id="phone"  placeholder="Phone Number"/>
               <input className="w-full bg-transparent pb-32 outline-0 border-b-[1px] border-b-black text-[16px] font-normal focus:boorder-b-[1px] focus:border-b-[#5B77F5]" type="text" name="message" id="message" placeholder="Message"/>
 
-               <button type="submit" className="bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] rounded-md w-[220px] py-4 px-6 text-white text-[18px] font-medium flex items-center gap-3 group">
+              
 
-                 Send Message
-                 <MdArrowOutward className="size-5 group-hover:rotate-45 duration-500" />
-
-               </button>
+               <button type="submit" className="bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] relative group md:px-6 px-6 py-3 md:py-3 rounded text-[16px] font-semibold text-[#060A11] overflow-hidden w-[220px]">
+  <span className="text-white flex items-center justify-center gap-4 relative z-10 transition-all duration-500 ease-in-out group-hover:-translate-y-3 group-hover:opacity-0">
+   <p>Send Message</p>
+  <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
+  </span>
+  
+  <div className="absolute inset-0 flex items-center justify-center gap-4 bg-[#4d68de] text-white scale-y-0 opacity-0 origin-bottom transition-all duration-500 ease-in-out group-hover:scale-y-100 group-hover:opacity-100">
+    <span className="text-[16px] font-semibold">Send Message</span>
+    <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
+  </div>
+</button>
                 
               </form>
 

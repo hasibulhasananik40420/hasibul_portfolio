@@ -115,7 +115,7 @@ const AboutMe = () => {
             </p>
             <h1
               ref={subHeadingRef}
-              className="mt-5 md:text-[46px] text-[32px] font-semibold text-black leading-[56px]"
+              className="mt-5 md:text-[46px] text-[28px] font-semibold text-black md:leading-[56px]"
             >
               2+ Years of Experience in This Field
             </h1>
@@ -130,13 +130,21 @@ const AboutMe = () => {
               interactive web applications that thrive on the internet.
             </h4>
             <div className="mt-9">
-              <button
-                ref={buttonRef}
-                className="px-6 py-4 rounded-md bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] text-white text-[18px] font-normal flex justify-center items-center gap-4"
-              >
-                <span>Download Resume</span>
-                <RxDownload className="size-5" />
-              </button>
+              
+
+              <a href="https://docs.google.com/document/d/1tUKL4lyBqdnra6BzwD2LYphEn8_P5cGWA_pPU46aLEA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <button ref={buttonRef} className="bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] relative group md:px-6 px-6 py-3 md:py-3 rounded text-[16px] font-semibold text-[#060A11] overflow-hidden">
+  <span className="text-white flex items-center justify-center gap-4 relative z-10 transition-all duration-500 ease-in-out group-hover:-translate-y-3 group-hover:opacity-0">
+   <p>Download Resume</p>
+   <RxDownload className="size-5" />
+  </span>
+  
+  <div className="absolute inset-0 flex items-center justify-center gap-4 bg-[#4d68de] text-white scale-y-0 opacity-0 origin-bottom transition-all duration-500 ease-in-out group-hover:scale-y-100 group-hover:opacity-100">
+    <span className="text-[16px] font-semibold">Download Resume</span>
+    <RxDownload className="size-5" />
+  </div>
+</button>
+</a>
             </div>
           </div>
 

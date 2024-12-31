@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client"
 import Image from "next/image"
 import javascript from "@/assets/internet_10003015.png"
@@ -7,10 +8,10 @@ import api from "@/assets/api.svg"
 import payment from "@/assets/money_14872998.png"
 import database from "@/assets/data-server_9698472.png"
 import effect from "@/assets/locomotion.svg"
-import { MdArrowOutward } from "react-icons/md";
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { BsArrowUpRight } from "react-icons/bs"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -276,12 +277,19 @@ const Service = () => {
     </div> */}
 
                  <div className="flex justify-center mt-10">
-                 <button ref={startButtonRef} className="bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] rounded-md py-4 px-6 text-white text-[18px] font-medium flex justify-center items-center gap-3 group">
+                
 
-                See More
-               <MdArrowOutward className="size-5 group-hover:rotate-45 duration-500" />
-
-               </button>
+<button ref={startButtonRef} style={{background:"rgba(7, 12, 19, 0.04)"}} className="relative group md:px-6 px-6 py-3 md:py-3 rounded text-[16px] font-semibold text-[#060A11] overflow-hidden">
+  <span className="flex items-center justify-center gap-4 relative z-10 transition-all duration-500 ease-in-out group-hover:-translate-y-3 group-hover:opacity-0">
+   <p>See More</p>
+  <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
+  </span>
+  
+  <div className="absolute inset-0 flex items-center justify-center gap-4 bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] text-white scale-y-0 opacity-0 origin-bottom transition-all duration-500 ease-in-out group-hover:scale-y-100 group-hover:opacity-100">
+    <span className="text-[16px] font-semibold">See More</span>
+    <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
+  </div>
+</button>
                  </div>
 
 

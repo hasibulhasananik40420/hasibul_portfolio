@@ -96,10 +96,20 @@ const Navbar = () => {
          
        
         
-        <button className="px-6 py-4 rounded-[6px] bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] text-white text-[16px] font-normal flex justify-center items-center gap-4 group">
-      <span>Let's Talk</span>
-      <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
-        </button>
+      
+   <a href="https://wa.me/qr/SYZJMRDCTMOBP1" target="_blank" rel="noopener noreferrer">
+    <button style={{background:"rgba(7, 12, 19, 0.04)"}} className="relative group md:px-6 px-6 py-3 md:py-3 rounded text-[16px] font-semibold text-[#060A11] overflow-hidden">
+  <span className="flex items-center justify-center gap-4 relative z-10 transition-all duration-500 ease-in-out group-hover:-translate-y-3 group-hover:opacity-0">
+   <p>Let's Talk</p>
+  <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
+  </span>
+  
+  <div className="absolute inset-0 flex items-center justify-center gap-4 bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] text-white scale-y-0 opacity-0 origin-bottom transition-all duration-500 ease-in-out group-hover:scale-y-100 group-hover:opacity-100">
+    <span className="text-[16px] font-semibold">Let's Talk</span>
+    <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
+  </div>
+</button>
+</a>
 
     
 
