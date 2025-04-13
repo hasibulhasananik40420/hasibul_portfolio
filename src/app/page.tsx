@@ -10,6 +10,8 @@ import Navbar from "@/components/Shared/Navbar"
 import Skills from "@/components/Skills/Skills"
 import Banner from "@/components/ui/Banner"
 
+
+
 const HomePage = () => {
   return (
     <div className="">

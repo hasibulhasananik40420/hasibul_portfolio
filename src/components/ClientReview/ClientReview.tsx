@@ -200,12 +200,13 @@ const ClientReview = () => {
                          <h5 className="text-[14px] font-normal text-[#C0C2C3]">CTO at Webify</h5>
                      
                       </div>
-                      <div className="flex items-center gap-2 pt-3 md:pt-0">
-                      <FaStar className="size-5 text-yellow-700"/>
-                      <FaStar className="size-5 text-yellow-700"/>
-                      <FaStar className="size-5 text-yellow-700"/>
-                      <FaStar className="size-5 text-yellow-700"/>
-                      <FaStar className="size-5 text-yellow-700"/>
+                      <div className="flex items-center gap-1 pt-3 md:pt-0">
+                      <FaStar className="size-3 text-yellow-400"/>
+                      <FaStar className="size-3 text-yellow-400"/>
+                      <FaStar className="size-3 text-yellow-400"/>
+                      <FaStar className="size-3 text-yellow-400"/>
+                      <FaStar className="size-3 text-yellow-400"/>
+                      
 
                       </div>
                    </div>
@@ -230,12 +231,12 @@ const ClientReview = () => {
                          <h5 className="text-[14px] font-normal text-[#C0C2C3]">COO at Cloud</h5>
                      
                       </div>
-                      <div className="flex items-center gap-2 pt-3 md:pt-0">
-                      <FaStar className="size-5 text-yellow-700"/>
-                      <FaStar className="size-5 text-yellow-700"/>
-                      <FaStar className="size-5 text-yellow-700"/>
-                      <FaStar className="size-5 text-yellow-700"/>
-                      <FaStar className="size-5 text-yellow-700"/>
+                      <div className="flex items-center gap-1 pt-3 md:pt-0">
+                      <FaStar className="size-3 text-yellow-400"/>
+                      <FaStar className="size-3 text-yellow-400"/>
+                      <FaStar className="size-3 text-yellow-400"/>
+                      <FaStar className="size-3 text-yellow-400"/>
+                      <FaStar className="size-3 text-yellow-400"/>
 
                       </div>
                    </div>
@@ -260,12 +261,12 @@ const ClientReview = () => {
                          <h5 className="text-[14px] font-normal text-[#C0C2C3]">COO at pixzo.</h5>
                      
                       </div>
-                      <div className="flex items-center gap-2 pt-3 md:pt-0">
-                      <FaStar className="size-5 text-yellow-700"/>
-                      <FaStar className="size-5 text-yellow-700"/>
-                      <FaStar className="size-5 text-yellow-700"/>
-                      <FaStar className="size-5 text-yellow-700"/>
-                      <FaStar className="size-5 text-yellow-700"/>
+                      <div className="flex items-center gap-1 pt-3 md:pt-0">
+                      <FaStar className="size-3 text-yellow-400"/>
+                      <FaStar className="size-3 text-yellow-400"/>
+                      <FaStar className="size-3 text-yellow-400"/>
+                      <FaStar className="size-3 text-yellow-400"/>
+                      <FaStar className="size-3 text-yellow-400"/>
 
                       </div>
                    </div>

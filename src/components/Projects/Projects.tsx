@@ -5,11 +5,11 @@ import Image from "next/image"
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import homify from "@/assets/Frame 5.png"
-import cycure from "@/assets/cycure.png"
+import tailorfit from "@/assets/tailorfit.png"
+import skillion from "@/assets/skillion.png"
 import chad from "@/assets/chad-tutoring.png"
 import chad2 from "@/assets/chad.png"
-import pixzo from "@/assets/pixzo.png"
+import sasly from "@/assets/sasly.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -86,12 +86,12 @@ const Projects = () => {
                   <div ref={card1Ref} className="bg-[#FEEFB5] rounded md:px-20 px-10 md:pt-20 pt-10 lg:h-[500px]">
                      <div className="lg:flex justify-between items-center">
                          <div className="lg:w-[30%] w-full">
-                            <h1 className="md:text-[48px] text-[36px] md:w-[400px] w-full md:leading-[62px] leading-[50px]">Property Buy & Sell Hub 
+                            <h1 className="md:text-[48px] text-[36px] md:w-[400px] w-full md:leading-[52px] leading-[40px]">Tailor Shop Management Software
                             </h1>
-                             <p className="text-[16px] font-normal text-[#060A11] mt-6">New standard for living</p>
+                             <p className="text-[16px] font-normal text-[#060A11] mt-6">Digital Solution for Tailor Shops</p>
         
 
-             <a href="https://homi-fy.netlify.app" target="_blank" rel="noopener noreferrer">
+             <a href="https://tailorfitapp.com" target="_blank" rel="noopener noreferrer">
              <button style={{background:"rgba(7, 12, 19, 0.04)"}} className="relative group  md:mt-20 mt-10 md:px-6 px-6 py-3 md:py-3 rounded text-[16px] font-semibold text-[#060A11] overflow-hidden">
   <span className="relative z-10 transition-all duration-500 ease-in-out group-hover:-translate-y-3 group-hover:opacity-0">
     View Project
@@ -106,7 +106,7 @@ const Projects = () => {
                          </div>
 
                           <div className="lg:w-[50%] w-full mt-10 lg:mt-0">
-                            <Image className="md:h-[420px] h-[200px] rounded w-full" src={homify} width={500} height={200} alt=" hasibul hasan own project"/>
+                            <Image className="md:h-[420px] h-[200px] rounded w-full" src={tailorfit} width={500} height={200} alt=" hasibul hasan own project"/>
                           </div>
                      </div>
                   </div>
@@ -117,12 +117,12 @@ const Projects = () => {
                    <div ref={card2Ref} className="lg:w-[70%] w-full bg-[#E6F1FF] rounded md:px-10 px-5 md:pt-10 pt-5 lg:h-[400px]">
                      <div className="lg:flex justify-between items-center">
                          <div className="lg:w-[30%] w-full">
-                            <h1 className="md:text-[30px] text-[24px] md:w-[400px] w-[270px]  font-semibold"> Protect Information <br /> From Hackers
+                            <h1 className="md:text-[30px] text-[24px] md:w-[400px] w-[270px] font-semibold leading-9"> SkillionTech build <br /> career in the IT sector
                             </h1>
-                             <p className="text-[16px] font-normal text-[#060A11] mt-6">Product Design</p>
+                             <p className="text-[16px] font-normal text-[#060A11] mt-6">Master the essential IT skills</p>
         
 
-    <a href="https://cycure.azrafnetworks.net/" target="_blank" rel="noopener noreferrer">
+    <a href="https://skilliontech.com" target="_blank" rel="noopener noreferrer">
     <button style={{background:"rgba(7, 12, 19, 0.04)"}} className="relative group  md:mt-20 mt-10 md:px-6 px-6 py-3 md:py-3 rounded text-[16px] font-semibold text-[#060A11] overflow-hidden">
   <span className="relative z-10 transition-all duration-500 ease-in-out group-hover:-translate-y-3 group-hover:opacity-0">
     View Project
@@ -139,7 +139,7 @@ const Projects = () => {
                          </div>
 
                           <div className="lg:w-[50%] w-full mt-10 lg:mt-5">
-                            <Image className="md:h-[340px] h-[200px] w-full" src={cycure} width={500} height={200} alt=""/>
+                            <Image className="md:h-[340px] h-[200px] w-full" src={skillion} width={500} height={200} alt=""/>
                           </div>
                      </div>
                   </div>
@@ -209,26 +209,26 @@ const Projects = () => {
 
 
                        <div ref={card5Ref} className="lg:w-[30%] w-full relative mt-10 lg:mt-0">
-                           <Image className="w-full h-[400px] rounded" src={pixzo} width={300} height={300} alt=""/>
+                           <Image className="w-full h-[400px] rounded" src={sasly} width={300} height={300} alt=""/>
                            
                             
                           
                            <div className="absolute top-0 left-0 w-full h-full bg-[#004aff] opacity-[0.7] rounded"></div>
                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
         <h3 className="text-[22px] font-semibold text-white w-full text-center">
-        We're an Creative <br /> Digital Agency
+        Sasly - Multipurpose <br /> Landing Page Design
         </h3>
         <p className="text-[16px] font-normal text-white text-center mt-6">Landing page design</p>
 
          
   <div className="flex justify-center md:mt-10 mt-5 ">
-   <a href="https://pixarzo.vercel.app/" target="_blank" rel="noopener noreferrer">
-  <button style={{background:"rgba(7, 12, 19, 0.04)"}} className="relative group  md:px-6 px-6 py-3 md:py-3 rounded text-[16px] font-semibold text-white overflow-hidden">
+   <a href="https://sasly-react.vercel.app" target="_blank" rel="noopener noreferrer">
+  <button className=" bg-[#0e244a] relative group  md:px-6 px-6 py-3 md:py-3 rounded text-[16px] font-semibold text-white overflow-hidden">
   <span className="relative z-10 transition-all duration-500 ease-in-out group-hover:-translate-y-3 group-hover:opacity-0">
     View Project
   </span>
   
-  <div style={{background:"rgba(7, 12, 19, 0.04)"}} className="absolute inset-0 flex items-center justify-center scale-y-0 opacity-0 origin-bottom transition-all duration-500 ease-in-out group-hover:scale-y-100 group-hover:opacity-100">
+  <div className="bg-[#060A11] absolute inset-0 flex items-center justify-center scale-y-0 opacity-0 origin-bottom transition-all duration-500 ease-in-out group-hover:scale-y-100 group-hover:opacity-100">
     <span className="text-white text-[16px] font-semibold">View Project</span>
   </div>
 </button>
