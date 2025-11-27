@@ -8,301 +8,199 @@ import tailwind from "@/assets/tailwindcss-icon.svg"
 import bootstrap from "@/assets/bootstrap.svg"
 import github from "@/assets/github.svg"
 import figma from "@/assets/figma.svg"
-import Marquee from "react-fast-marquee";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const skillsData = [
+  { name: "React", icon: "https://gerold.themejunction.net/wp-content/uploads/2024/05/react.png", percent: "93%" },
+  { name: "Javascript", icon: "https://gerold.themejunction.net/wp-content/uploads/2024/05/js.png", percent: "96%" },
+  { name: "Next.js", icon: nextjs, percent: "90%" },
+  { name: "Redux", icon: redux, percent: "87%" },
+  { name: "MongoDB", icon: mongodb, percent: "67%" },
+  { name: "Node.js", icon: node, percent: "49%" },
+  { name: "Tailwind", icon: tailwind, percent: "98%" },
+  { name: "Bootstrap", icon: bootstrap, percent: "85%" },
+  { name: "Github", icon: github, percent: "91%" },
+  { name: "Figma", icon: figma, percent: "54%" },
+];
 
 const Skills = () => {
-  const cardRefs = useRef<(HTMLParagraphElement | null)[]>([]);
   const containerRef = useRef(null);
-  const lineRefs = useRef<(HTMLParagraphElement | null)[]>([]);
-  useEffect(() => {
-    const lines = lineRefs.current;
+  const titleRef = useRef(null);
+  const gridRef = useRef(null);
 
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 80%",
-        markers: false,
-      },
-    })
-      .fromTo(
-        lines,
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Title Animation
+      gsap.fromTo(titleRef.current,
         { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          stagger: 0.4,
+          duration: 1,
           ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 80%",
+          }
         }
       );
 
+      // Grid Animation
+      gsap.fromTo(".skill-card",
+        { opacity: 0, y: 30, scale: 0.9 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: "top 85%",
+          }
+        }
+      );
 
+      // Experience Animation
+      gsap.fromTo(".experience-item",
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".experience-section",
+            start: "top 75%",
+          }
+        }
+      );
+    }, containerRef);
 
-    gsap.fromTo(
-      cardRefs.current,
-      {
-        opacity: 0,
-        y: 50,
-        scale: 0.95,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1.2,
-        ease: "power4.out",
-        stagger: 0.4,
-        scrollTrigger: {
-          trigger: cardRefs.current[0],
-          start: "top 85%",
-          end: "bottom 40%",
-        },
-      }
-    );
-
-
+    return () => ctx.revert();
   }, []);
 
-
   return (
-    <div className="bg-[#F9F9F9]">
-        <div className="max-w-7xl mx-auto md:py-[100px] py-16 px-3 md:px-6 lg:px-2">
-        <div ref={containerRef}>
-                    <p ref={(el) => {if (el) { lineRefs.current[0] = el}}} className="text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase">My Skills</p>
-                     <h1 ref={(el) => {if (el) { lineRefs.current[1] = el}}} className="md:text-[46px] text-[32px] font-bold text-black">My awesome Skills</h1>
-                </div>
+    <section ref={containerRef} className="py-24 relative overflow-hidden bg-[#0f0715]">
+      {/* Background Gradients */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#8750f7]/10 rounded-full blur-[120px] -z-10"></div>
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#2a1454]/20 rounded-full blur-[120px] -z-10"></div>
 
-                <Marquee speed={100} gradient={false}>
-                <div className="flex flex-wrap gap-6 mt-10">
-
-                <div>
-                <div className="bg-[#F5F3FC] hover:bg-[#2A1454] duration-300 shadow rounded-md px-14 py-8 flex flex-col justify-center items-center group cursor-pointer ml-6">
-                    <Image className="w-[80px] h-[80px] opacity-30 group-hover:opacity-100 group-hover:scale-105 duration-500 cursor-pointer" width={100} height={100} src="https://gerold.themejunction.net/wp-content/uploads/2024/05/react.png" alt=""/>
-                    <h3 className="text-[24px] font-semibold text-black mt-4 group-hover:text-[#5B77F5] duration-300">93%</h3>
-
-                 </div>
- 
-                 <h3 className="text-[18px] font-normal text-black mt-2 text-center">React</h3>
- 
-                </div>
-
-                <div>
-                <div className="bg-[#F5F3FC] hover:bg-[#2A1454] duration-300 shadow rounded-md px-14 py-8 flex flex-col justify-center items-center group cursor-pointer">
-                    <Image className="w-[80px] h-[80px] opacity-30 group-hover:opacity-100 group-hover:scale-105 duration-500 cursor-pointer" width={100} height={100} src="https://gerold.themejunction.net/wp-content/uploads/2024/05/js.png" alt=""/>
-                    <h3 className="text-[24px] font-semibold text-black mt-4 group-hover:text-[#5B77F5] duration-300">96%</h3>
-
-                 </div>
- 
-                 <h3 className="text-[18px] font-normal text-black mt-2 text-center">Javascript</h3>
- 
-                </div>
-                
-                <div>
-                <div className="bg-[#F5F3FC] hover:bg-[#2A1454] duration-300 shadow rounded-md px-14 py-8 flex flex-col justify-center items-center group cursor-pointer">
-                    <Image className="w-[80px] h-[80px] opacity-30 group-hover:opacity-100 group-hover:scale-105 duration-500 cursor-pointer" width={100} height={100} src={nextjs} alt=""/>
-                    <h3 className="text-[24px] font-semibold text-black mt-4 group-hover:text-[#5B77F5] duration-300">90%</h3>
-
-                 </div>
- 
-                 <h3 className="text-[18px] font-normal text-black mt-2 text-center">Next Js</h3>
- 
-                </div>
-
-                <div>
-                <div className="bg-[#F5F3FC] hover:bg-[#2A1454] duration-300 shadow rounded-md px-14 py-8 flex flex-col justify-center items-center group cursor-pointer">
-                    <Image className="w-[80px] h-[80px] opacity-30 group-hover:opacity-100 group-hover:scale-105 duration-500 cursor-pointer" width={100} height={100} src={redux} alt=""/>
-                    <h3 className="text-[24px] font-semibold text-black mt-4 group-hover:text-[#5B77F5] duration-300">87%</h3>
-
-                 </div>
- 
-                 <h3 className="text-[18px] font-normal text-black mt-2 text-center">redux</h3>
- 
-                </div>
-
-                <div>
-                <div className="bg-[#F5F3FC] hover:bg-[#2A1454] duration-300 shadow rounded-md px-14 py-8 flex flex-col justify-center items-center group cursor-pointer">
-                    <Image className="w-[80px] h-[80px] opacity-30 group-hover:opacity-100 group-hover:scale-105 duration-500 cursor-pointer" width={100} height={100} src={mongodb} alt=""/>
-                    <h3 className="text-[24px] font-semibold text-black mt-4 group-hover:text-[#5B77F5] duration-300">67%</h3>
-
-                 </div>
- 
-                 <h3 className="text-[18px] font-normal text-black mt-2 text-center">Mongodb</h3>
- 
-                </div>
-                <div>
-                <div className="bg-[#F5F3FC] hover:bg-[#2A1454] duration-300 shadow rounded-md px-14 py-8 flex flex-col justify-center items-center group cursor-pointer">
-                    <Image className="w-[80px] h-[80px] opacity-30 group-hover:opacity-100 group-hover:scale-105 duration-500 cursor-pointer" width={100} height={100} src={node} alt=""/>
-                    <h3 className="text-[24px] font-semibold text-black mt-4 group-hover:text-[#5B77F5] duration-300">49%</h3>
-
-                 </div>
- 
-                 <h3 className="text-[18px] font-normal text-black mt-2 text-center">Node Js</h3>
- 
-                </div>
-                <div>
-                <div className="bg-[#F5F3FC] hover:bg-[#2A1454] duration-300 shadow rounded-md px-14 py-8 flex flex-col justify-center items-center group cursor-pointer">
-                    <Image className="w-[80px] h-[80px] opacity-30 group-hover:opacity-100 group-hover:scale-105 duration-500 cursor-pointer" width={100} height={100} src={tailwind} alt=""/>
-                    <h3 className="text-[24px] font-semibold text-black mt-4 group-hover:text-[#5B77F5] duration-300">98%</h3>
-
-                 </div>
- 
-                 <h3 className="text-[18px] font-normal text-black mt-2 text-center">Tailwind Css</h3>
- 
-                </div>
-
-                <div>
-                <div className="bg-[#F5F3FC] hover:bg-[#2A1454] duration-300 shadow rounded-md px-14 py-8 flex flex-col justify-center items-center group cursor-pointer">
-                    <Image className="w-[80px] h-[80px] opacity-30 group-hover:opacity-100 group-hover:scale-105 duration-500 cursor-pointer" width={100} height={100} src={bootstrap} alt=""/>
-                    <h3 className="text-[24px] font-semibold text-black mt-4 group-hover:text-[#5B77F5] duration-300">85%</h3>
-
-                 </div>
- 
-                 <h3 className="text-[18px] font-normal text-black mt-2 text-center">Bootstrap</h3>
- 
-                </div>
-
-                <div>
-                <div className="bg-[#F5F3FC] hover:bg-[#2A1454] duration-300 shadow rounded-md px-14 py-8 flex flex-col justify-center items-center group cursor-pointer">
-                    <Image className="w-[80px] h-[80px] opacity-30 group-hover:opacity-100 group-hover:scale-105 duration-500 cursor-pointer" width={100} height={100} src={github} alt=""/>
-                    <h3 className="text-[24px] font-semibold text-black mt-4 group-hover:text-[#5B77F5] duration-300">91%</h3>
-
-                 </div>
- 
-                 <h3 className="text-[18px] font-normal text-black mt-2 text-center">Github</h3>
- 
-                </div>
-
-                <div>
-                <div className="bg-[#F5F3FC] hover:bg-[#2A1454] duration-300 shadow rounded-md px-14 py-8 flex flex-col justify-center items-center group cursor-pointer">
-                    <Image className="w-[80px] h-[80px] opacity-30 group-hover:opacity-100 group-hover:scale-105 duration-500 cursor-pointer" width={100} height={100} src={figma} alt=""/>
-                    <h3 className="text-[24px] font-semibold text-black mt-4 group-hover:text-[#5B77F5] duration-300">54%</h3>
-
-                 </div>
- 
-                 <h3 className="text-[18px] font-normal text-black mt-2 text-center">Figma</h3>
- 
-                </div>
-
-
-
-                
-
-                </div>
-                </Marquee>
-
-
-
-
-
-
-
-       <div className="lg:flex gap-20 mt-20">
-       <div ref={(el) => {if (el) { cardRefs.current[0] = el}}} className="bg-white rounded-md shadow p-6 w-full relative">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">Educational Experience</h2>
-
-        <div className="space-y-6">
-          {/* First Education Entry */}
-          <div>
-            <p className="text-gray-500 text-sm">2022 - 2025</p>
-            <h3 className="text-lg font-semibold text-gray-800 mt-1">
-            Bachelor of Science
-            </h3>
-            <p className="text-sm text-gray-400">Varendra University</p>
-            <p className="text-right text-blue-500 font-medium text-sm">running/4</p>
-          </div>
-
-          <hr className="border-gray-200" />
-
-          <div>
-            <p className="text-gray-500 text-sm">2017 - 2019</p>
-            <h3 className="text-lg font-semibold text-gray-800 mt-1">
-            Higher Schoold Graduation
-
-            </h3>
-            <p className="text-sm text-gray-400">Ishwardi Government College</p>
-            <p className="text-right text-blue-500 font-medium text-sm">4.89/5</p>
-          </div>
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        {/* Header */}
+        <div ref={titleRef} className="text-center mb-20">
+          <h2 className="text-[#8750f7] text-lg font-bold uppercase tracking-wider mb-3">My Expertise</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">Skills & Experience</h2>
         </div>
 
-        <div className="absolute top-0 right-0 w-24 h-12 bg-[#5B77F5] md:block hidden">
-          <svg
-            className="w-full h-full "
-            viewBox="0 0 100 50"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0 0 H100 Q80 50 0 50 Z"
-              fill="white"
-            />
-          </svg>
+        {/* Skills Grid */}
+        <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-24">
+          {skillsData.map((skill, index) => (
+            <div key={index} className="skill-card group relative bg-[#140c1c] border border-[#2a1454] rounded-2xl p-6 flex flex-col items-center justify-center gap-4 hover:border-[#8750f7] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(135,80,247,0.2)]">
+              <div className="w-16 h-16 relative flex items-center justify-center bg-[#1f122b] rounded-xl group-hover:bg-[#2a1454] transition-colors duration-300">
+                <Image
+                  src={skill.icon}
+                  alt={skill.name}
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="text-center">
+                <h3 className="text-white font-semibold text-lg mb-1">{skill.name}</h3>
+                <p className="text-[#8750f7] font-medium">{skill.percent}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Experience Section */}
+        {/* Experience Section */}
+        <div className="experience-section grid md:grid-cols-2 gap-12 lg:gap-20">
+
+          {/* Education */}
+          <div>
+            <h3 className="text-3xl font-bold text-white mb-12 flex items-center gap-3">
+              <span className="text-[#8750f7] text-4xl">🎓</span> My Education
+            </h3>
+            <div className="space-y-12">
+
+              <div className="group relative pl-12 transition-all duration-300">
+                {/* Timeline Line & Dot */}
+                <div className="absolute left-0 top-0 h-full w-[1px] bg-[#2a1454] group-hover:bg-[#8750f7]/50 transition-colors duration-300"></div>
+                <div className="absolute left-[-6px] top-2 w-3 h-3 rounded-full bg-[#8750f7] ring-4 ring-[#0f0715] group-hover:scale-125 transition-transform duration-300"></div>
+
+                {/* <span className="text-[#8750f7] font-bold text-sm mb-2 block uppercase tracking-wider">2022 - Present</span> */}
+                <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-[#8750f7] transition-colors duration-300">Bachelor of Science</h4>
+                <h5 className="text-white font-medium text-lg mb-4">Varendra University</h5>
+                <p className="text-gray-400 text-sm leading-relaxed">Currently pursuing my degree with a focus on Computer Science and Engineering.</p>
+              </div>
+
+              <div className="group relative pl-12 transition-all duration-300">
+                <div className="absolute left-0 top-0 h-full w-[1px] bg-[#2a1454] group-hover:bg-[#8750f7]/50 transition-colors duration-300"></div>
+                <div className="absolute left-[-6px] top-2 w-3 h-3 rounded-full bg-[#2a1454] group-hover:bg-[#8750f7] ring-4 ring-[#0f0715] group-hover:scale-125 transition-transform duration-300"></div>
+
+                {/* <span className="text-[#8750f7] font-bold text-sm mb-2 block uppercase tracking-wider">2017 - 2019</span> */}
+                <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-[#8750f7] transition-colors duration-300">Higher School Graduation</h4>
+                <h5 className="text-white font-medium text-lg mb-4">Ishwardi Government College</h5>
+                <p className="text-gray-400 text-sm leading-relaxed">Completed Higher Secondary Certificate with a GPA of 4.89/5.00.</p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Job Experience */}
+          <div>
+            <h3 className="text-3xl font-bold text-white mb-12 flex items-center gap-3">
+              <span className="text-[#8750f7] text-4xl">💼</span> My Experience
+            </h3>
+            <div className="space-y-12">
+
+                <div className="group relative pl-12 transition-all duration-300">
+                <div className="absolute left-0 top-0 h-full w-[1px] bg-[#2a1454] group-hover:bg-[#8750f7]/50 transition-colors duration-300"></div>
+                <div className="absolute left-[-6px] top-2 w-3 h-3 rounded-full bg-[#2a1454] group-hover:bg-[#8750f7] ring-4 ring-[#0f0715] group-hover:scale-125 transition-transform duration-300"></div>
+
+                <span className="text-[#8750f7] font-bold text-sm mb-2 block uppercase tracking-wider">2025 - Present</span>
+                <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-[#8750f7] transition-colors duration-300">Frontend Web Developer</h4>
+                <h5 className="text-white font-medium text-lg mb-4">Advertising For Business - A4B</h5>
+                <p className="text-gray-400 text-sm leading-relaxed">Contributed to the A4B project, delivering high-impact advertising solutions.</p>
+              </div>
+
+              <div className="group relative pl-12 transition-all duration-300">
+                <div className="absolute left-0 top-0 h-full w-[1px] bg-[#2a1454] group-hover:bg-[#8750f7]/50 transition-colors duration-300"></div>
+                <div className="absolute left-[-6px] top-2 w-3 h-3 rounded-full bg-[#8750f7] ring-4 ring-[#0f0715] group-hover:scale-125 transition-transform duration-300"></div>
+
+                <span className="text-[#8750f7] font-bold text-sm mb-2 block uppercase tracking-wider">2024 - July 2025</span>
+                <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-[#8750f7] transition-colors duration-300">Frontend Web Developer</h4>
+                <h5 className="text-white font-medium text-lg mb-4">Pixelfit - Digital Agency, Pabna</h5>
+                <p className="text-gray-400 text-sm leading-relaxed">Building modern web applications and ensuring high-quality user experiences.</p>
+              </div>
+
+            
+
+              <div className="group relative pl-12 transition-all duration-300">
+                <div className="absolute left-0 top-0 h-full w-[1px] bg-[#2a1454] group-hover:bg-[#8750f7]/50 transition-colors duration-300"></div>
+                <div className="absolute left-[-6px] top-2 w-3 h-3 rounded-full bg-[#2a1454] group-hover:bg-[#8750f7] ring-4 ring-[#0f0715] group-hover:scale-125 transition-transform duration-300"></div>
+
+                <span className="text-[#8750f7] font-bold text-sm mb-2 block uppercase tracking-wider">2022 - 2023</span>
+                <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-[#8750f7] transition-colors duration-300">Frontend Web Developer</h4>
+                <h5 className="text-white font-medium text-lg mb-4">Ayana Network Ltd, Canada</h5>
+                <p className="text-gray-400 text-sm leading-relaxed">Worked remotely on various frontend projects, optimizing performance and UI.</p>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
+    </section>
+  );
+};
 
-      
-      
-       <div ref={(el) => {if (el) { cardRefs.current[1] = el}}} className="bg-white rounded-md shadow p-6 w-full relative mt-10 md:mt-16 lg:mt-0">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">Job Experience</h2>
-
-        <div className="space-y-6">
-          {/* First Education Entry */}
-          <div>
-            <p className="text-gray-500 text-sm">2022 - 2023</p>
-            <h3 className="text-lg font-semibold text-gray-800 mt-1">
-            Frontend Web Developer
-            </h3>
-            <p className="text-sm text-gray-400">Ayana Network Ltd, Canada</p>
-            <p className="text-right text-blue-500 font-medium text-sm">7 months</p>
-          </div>
-
-          <hr className="border-gray-200" />
-
-          <div>
-            <p className="text-gray-500 text-sm">2024 - running</p>
-            <h3 className="text-lg font-semibold text-gray-800 mt-1">
-            Frontend Web Developer
-           
-            </h3>
-            <p className="text-sm text-gray-400"> Pixelfit - Digital Agency, Pabna</p>
-            <p className="text-right text-blue-500 font-medium text-sm">running</p>
-          </div>
-        </div>
-        <div className="absolute top-0 right-0 w-24 h-12 bg-[#5B77F5] md:block hidden">
-          <svg
-            className="w-full h-full"
-            viewBox="0 0 100 50"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0 0 H100 Q80 50 0 50 Z"
-              fill="white"
-            />
-          </svg>
-        </div>
-      </div>
-
-      
-
-       </div>
-    
-
-
-
-
-
-
-
-                
-        </div>
-    </div>
-  )
-}
-
-export default Skills
+export default Skills;

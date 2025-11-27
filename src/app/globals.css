@@ -1,8 +1,206 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@100..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   CUSTOM PROPERTIES - DARK THEME
+   ============================================ */
+:root {
+  /* Dark Background Colors */
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #0f1420;
+  --bg-tertiary: #151a2b;
+  
+  /* Gradient Colors */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-purple: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  
+  /* Glass Effect */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b4b9c9;
+  --text-muted: #6b7280;
+  
+  /* Accent Colors */
+  --accent-blue: #667eea;
+  --accent-purple: #764ba2;
+  --accent-pink: #f5576c;
+  --accent-cyan: #00f2fe;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-[#0a0e1a] text-white font-['Inter',sans-serif] antialiased;
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f35 100%);
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Sora',sans-serif] font-bold;
+  }
+}
+
+/* ============================================
+   ANIMATED GRADIENT BACKGROUND
+   ============================================ */
+.gradient-bg {
+  background: linear-gradient(-45deg, #0a0e1a, #1a1f35, #0f1420, #151a2b);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================================
+   GLASSMORPHISM EFFECTS
+   ============================================ */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   GRADIENT TEXT
+   ============================================ */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-pink {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   CUSTOM BACKGROUNDS
+   ============================================ */
+.bg-dark-gradient {
+  background: linear-gradient(135deg, #0f1420 0%, #1a1f35 50%, #0a0e1a 100%);
+}
+
+.bg-dark-pattern {
+  background-color: #0a0e1a;
+  background-image: 
+    radial-gradient(at 40% 20%, rgba(102, 126, 234, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(118, 75, 162, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(74, 144, 226, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgba(245, 87, 108, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(0, 242, 254, 0.1) 0px, transparent 50%);
+}
+
+/* ============================================
+   SECTION BACKGROUNDS
+   ============================================ */
+.section-gradient-1 {
+  background: linear-gradient(135deg, #0f1420 0%, #1a1f35 100%);
+  position: relative;
+}
+
+.section-gradient-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(118, 75, 162, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.section-gradient-2 {
+  background: linear-gradient(135deg, #1a1f35 0%, #0a0e1a 100%);
+  position: relative;
+}
+
+.section-gradient-2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 70% 20%, rgba(74, 144, 226, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 30% 80%, rgba(245, 87, 108, 0.12) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ============================================
+   CUSTOM ANIMATIONS
+   ============================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(102, 126, 234, 0.8); }
+}
+
+.glow-animation {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* ============================================
+   SLICK SLIDER CUSTOMIZATION
+   ============================================ */
 @media screen and (min-width: 1024px) {
   .slick-slide div {
     margin: 0 13px;
@@ -27,99 +225,59 @@
   }
 }
 
-.bg{
-           background: radial-gradient(circle at top left, #FDEAFF, transparent 40%),
-           radial-gradient(circle at top center, #d1eef6, transparent 30%), 
-            radial-gradient(circle at center, #D4FDE4, transparent 50%), 
-            radial-gradient(circle at top right, #fdfefe, transparent 100%);
-           background-color: #FFFFFF; 
-          
-}
-.bg2{
-           background: radial-gradient(circle at top left, #f8ebfa, transparent 20%),
-           radial-gradient(circle at top center, #d1eef6, transparent 0%), 
-            radial-gradient(circle at center, #D4FDE4, transparent 0%), 
-            radial-gradient(circle at top right, #eaf8f8, transparent 30%);
-           background-color: #FFFFFF; 
-          
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-
-
-
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
+::-webkit-scrollbar-track {
+  background: #0a0e1a;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 5px;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
 
-.bg-color {
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.text-shadow {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
 
-  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%221920%22%20height%3D%221080%22%20viewBox%3D%220%200%201920%201080%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20clip-path%3D%22url(%23clip0_1413_1742)%22%3E%3Crect%20width%3D%221920%22%20height%3D%221080%22%20fill%3D%22white%22/%3E%3Cg%20opacity%3D%220.3%22%20filter%3D%22url(%23filter0_f_1413_1742)%22%3E%3Ccircle%20cy%3D%22183%22%20r%3D%22242%22%20fill%3D%22%23F00C89%22/%3E%3C/g%3E%3Cg%20opacity%3D%220.3%22%20filter%3D%22url(%23filter1_f_1413_1742)%22%3E%3Ccircle%20cx%3D%221706%22%20cy%3D%221120%22%20r%3D%22242%22%20fill%3D%22%230CC7F0%22/%3E%3C/g%3E%3Cg%20opacity%3D%220.3%22%20filter%3D%22url(%23filter2_f_1413_1742)%22%3E%3Ccircle%20cx%3D%22318%22%20cy%3D%22-92%22%20r%3D%22242%22%20fill%3D%22%2300A3FF%22/%3E%3C/g%3E%3Cg%20opacity%3D%220.3%22%20filter%3D%22url(%23filter3_f_1413_1742)%22%3E%3Ccircle%20cx%3D%221920%22%20cy%3D%22914%22%20r%3D%22242%22%20fill%3D%22%23A60EEE%22/%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_f_1413_1742%22%20x%3D%22-742%22%20y%3D%22-559%22%20width%3D%221484%22%20height%3D%221484%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22/%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22shape%22/%3E%3CfeGaussianBlur%20stdDeviation%3D%22250%22%20result%3D%22effect1_foregroundBlur_1413_1742%22/%3E%3C/filter%3E%3Cfilter%20id%3D%22filter1_f_1413_1742%22%20x%3D%22964%22%20y%3D%22378%22%20width%3D%221484%22%20height%3D%221484%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22/%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22shape%22/%3E%3CfeGaussianBlur%20stdDeviation%3D%22250%22%20result%3D%22effect1_foregroundBlur_1413_1742%22/%3E%3C/filter%3E%3Cfilter%20id%3D%22filter2_f_1413_1742%22%20x%3D%22-424%22%20y%3D%22-834%22%20width%3D%221484%22%20height%3D%221484%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22/%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22shape%22/%3E%3CfeGaussianBlur%20stdDeviation%3D%22250%22%20result%3D%22effect1_foregroundBlur_1413_1742%22/%3E%3C/filter%3E%3Cfilter%20id%3D%22filter3_f_1413_1742%22%20x%3D%221178%22%20y%3D%22172%22%20width%3D%221484%22%20height%3D%221484%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22/%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22shape%22/%3E%3CfeGaussianBlur%20stdDeviation%3D%22250%22%20result%3D%22effect1_foregroundBlur_1413_1742%22/%3E%3C/filter%3E%3CclipPath%20id%3D%22clip0_1413_1742%22%3E%3Crect%20width%3D%221920%22%20height%3D%221080%22%20fill%3D%22white%22/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+.border-gradient {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.border-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+@media (max-width: 768px) {
+  .glass-card {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
 }
 

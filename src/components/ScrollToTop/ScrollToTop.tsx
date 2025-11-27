@@ -36,7 +36,7 @@
 
 //   return (
 //     <>
-    
+
 
 //       {/* Scroll to Top Button */}
 //       {isVisible && (
@@ -91,14 +91,14 @@ const ScrollToTopWithRotatingColor = () => {
 
   return (
     <>
-     
+
       {isVisible && (
         <button
           onClick={scrollToTop}
           style={{
             background: `conic-gradient(
-              #007BFF ${rotationAngle}deg,
-              #CCCCCC ${rotationAngle}deg
+              #667eea ${rotationAngle}deg,
+              rgba(255, 255, 255, 0.1) ${rotationAngle}deg
             )`,
           }}
           className="fixed bottom-4 right-4 size-10 rounded-full text-white shadow-lg hover:shadow-2xl transition-all duration-300"

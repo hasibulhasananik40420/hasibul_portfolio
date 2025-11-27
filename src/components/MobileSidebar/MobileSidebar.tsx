@@ -19,7 +19,7 @@ const MobileSidebar = () => {
 
   const navItems = [
     { to: "home", label: "Home" },
-   
+
     { to: "service", label: "Services" },
     { to: "about", label: "About" },
     { to: "portfolio", label: "Portfolio" },
@@ -57,7 +57,7 @@ const MobileSidebar = () => {
       setIsFixed(false);
     }
 
-   
+
   };
 
   useEffect(() => {
@@ -72,83 +72,83 @@ const MobileSidebar = () => {
 
   return (
     <div className="relative">
-    
-     <div className={`flex justify-between items-center h-[10vh] w-full !z-[999999] ${isFixed ? 'bg-white fixed top-0 shadow-navShadow' : ''}`}>
 
-     <div className="-ml-2">
-          
-          <Image className=" w-[100px] h-[100px]" src={logo} alt="hasibul portfilo"/>
- 
-         </div>
+      <div className={`flex justify-between items-center h-[10vh] w-full !z-[999999] ${isFixed ? 'glass fixed top-0 shadow-2xl' : ''}`}>
 
-     <div>
-       <div className="flex items-center gap-4">
-      
-      <div onClick={() => setIsOpen(!isOpen)} className="px-3 py-2 bg-[#5B77F5] flex justify-center items-center rounded  mr-4">
-      <CgMenuRightAlt className="size-5 text-white"/>
+        <div className="-ml-2">
+
+          <Image className=" w-[100px] h-[100px]" src={logo} alt="hasibul portfilo" />
+
+        </div>
+
+        <div>
+          <div className="flex items-center gap-4">
+
+            <div onClick={() => setIsOpen(!isOpen)} className="px-3 py-2 bg-gradient-to-r from-[#667eea] to-[#764ba2] flex justify-center items-center rounded mr-4">
+              <CgMenuRightAlt className="size-5 text-white" />
+            </div>
+
+
+          </div>
+        </div>
+
       </div>
-
-        
-       </div>
-     </div>
-
-     </div>
 
       {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className="fixed top-0 right-0 h-full w-72 bg-[#F9F9F9] text-white translate-x-full flex flex-col p-4 space-y-4 shadow-lg !z-[99999999]"
+        className="fixed top-0 right-0 h-full w-72 bg-[#0a0e1a] text-white translate-x-full flex flex-col p-4 space-y-4 shadow-lg !z-[99999999] border-l border-white/10"
       >
-         <div className="flex justify-end">
-         <div onClick={() => setIsOpen(!isOpen)} className="px-3 py-2 bg-[#5B77F5] flex justify-center items-center rounded">
-      <IoClose className="size-5 text-white"/>
-      </div>
-         </div>
+        <div className="flex justify-end">
+          <div onClick={() => setIsOpen(!isOpen)} className="px-3 py-2 bg-gradient-to-r from-[#667eea] to-[#764ba2] flex justify-center items-center rounded">
+            <IoClose className="size-5 text-white" />
+          </div>
+        </div>
 
 
         <div className="flex flex-col gap-6 ml-5 pt-10">
-      {navItems.map((item) => (
-        <ScrollLink
-          key={item.to}
-          to={item.to}
-          spy={true}
-          smooth={true}
-          duration={1000}
-          onSetActive={() => setActiveLink(item.to)}
-        >
-          <div
-            className={`text-[18px] font-medium relative inline-block cursor-pointer
-            ${activeLink === item.to ? "text-[#5B77F5]" : "text-[#333]"}
+          {navItems.map((item) => (
+            <ScrollLink
+              key={item.to}
+              to={item.to}
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => setActiveLink(item.to)}
+            >
+              <div
+                className={`text-[18px] font-medium relative inline-block cursor-pointer
+            ${activeLink === item.to ? "gradient-text" : "text-gray-300"}
             after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] 
-            after:bg-[#5B77F5] 
+            after:bg-gradient-to-r after:from-[#667eea] after:to-[#764ba2]
             ${activeLink === item.to ? "after:scale-x-100 after:origin-left" : "after:scale-x-0 after:origin-right"} 
             after:transition-transform after:duration-500
-            hover:after:scale-x-100 hover:after:origin-left hover:text-[#5B77F5]`}
-          >
-            {item.label}
-          </div>
-        </ScrollLink>
-      ))}
-    </div>
+            hover:after:scale-x-100 hover:after:origin-left hover:text-white`}
+              >
+                {item.label}
+              </div>
+            </ScrollLink>
+          ))}
+        </div>
 
 
-    <a href="https://wa.me/qr/SYZJMRDCTMOBP1" target="_blank" rel="noopener noreferrer">
-    <button style={{background:"rgba(7, 12, 19, 0.04)"}} className="relative group md:px-6 px-6 py-3 md:py-3 rounded text-[16px] font-semibold text-[#060A11] overflow-hidden">
-  <span className="flex items-center justify-center gap-4 relative z-10 transition-all duration-500 ease-in-out group-hover:-translate-y-3 group-hover:opacity-0">
-   <p>Let's Talk</p>
-  <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
-  </span>
-  
-  <div className="absolute inset-0 flex items-center justify-center gap-4 bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] text-white scale-y-0 opacity-0 origin-bottom transition-all duration-500 ease-in-out group-hover:scale-y-100 group-hover:opacity-100">
-    <span className="text-[16px] font-semibold">Let's Talk</span>
-    <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
-  </div>
-</button>
-</a>
+        <a href="https://wa.me/qr/SYZJMRDCTMOBP1" target="_blank" rel="noopener noreferrer">
+          <button className="glass relative group md:px-6 px-6 py-3 md:py-3 rounded-xl text-[16px] font-semibold text-white overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-300">
+            <span className="flex items-center justify-center gap-4 relative z-10 transition-all duration-500 ease-in-out group-hover:-translate-y-3 group-hover:opacity-0">
+              <p>Let's Talk</p>
+              <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
+            </span>
+
+            <div className="absolute inset-0 flex items-center justify-center gap-4 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white scale-y-0 opacity-0 origin-bottom transition-all duration-500 ease-in-out group-hover:scale-y-100 group-hover:opacity-100">
+              <span className="text-[16px] font-semibold">Let's Talk</span>
+              <BsArrowUpRight className="size-5 group-hover:rotate-45 duration-500" />
+            </div>
+          </button>
+        </a>
 
 
-        
-       
+
+
       </div>
 
       {/* Overlay */}

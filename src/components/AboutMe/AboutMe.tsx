@@ -81,7 +81,7 @@ const AboutMe = () => {
       }
     );
 
-      // Start button animation
+    // Start button animation
     gsap.fromTo(
       buttonRef.current,
       { opacity: 0, y: 50 },
@@ -100,8 +100,7 @@ const AboutMe = () => {
 
   return (
     <div
-      className="bg-[#F9F9F9]"
-      style={{ background: "linear-gradient(180deg, #E3F8FF 0%, #FFFFFF 100%)" }}
+      className="section-gradient-2"
       id="about"
     >
       <div className="max-w-7xl mx-auto md:pt-[100px] pt-16 px-3 md:px-6 lg:px-2">
@@ -109,19 +108,19 @@ const AboutMe = () => {
           <div className="lg:w-[50%] w-full">
             <p
               ref={headingRef}
-              className="text-[#5B77F5] md:text-[20px] text-[16px] font-normal uppercase"
+              className="gradient-text md:text-[20px] text-[16px] font-normal uppercase"
             >
               About Me
             </p>
             <h1
               ref={subHeadingRef}
-              className="mt-5 md:text-[46px] text-[28px] font-semibold text-black md:leading-[56px]"
+              className="mt-5 md:text-[46px] text-[28px] font-semibold text-white md:leading-[56px]"
             >
-              2+ Years of Experience in This Field
+              3+ Years of Experience in This Field
             </h1>
             <h4
               ref={paragraphRef}
-              className="text-[#666] text-[18px] font-normal mt-5"
+              className="text-gray-300 text-[18px] font-normal mt-5"
             >
               Hi, I’m Hasibul Hasan, a passionate front-end web developer
               crafting seamless user experiences with React and Next.js. My
@@ -130,21 +129,21 @@ const AboutMe = () => {
               interactive web applications that thrive on the internet.
             </h4>
             <div className="mt-9">
-              
+
 
               <a href="https://docs.google.com/document/d/1tUKL4lyBqdnra6BzwD2LYphEn8_P5cGWA_pPU46aLEA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <button ref={buttonRef} className="bg-gradient-to-r from-[#5B77F5] to-[#4A90E2] relative group md:px-6 px-6 py-3 md:py-3 rounded text-[16px] font-semibold text-[#060A11] overflow-hidden">
-  <span className="text-white flex items-center justify-center gap-4 relative z-10 transition-all duration-500 ease-in-out group-hover:-translate-y-3 group-hover:opacity-0">
-   <p>Download Resume</p>
-   <RxDownload className="size-5" />
-  </span>
-  
-  <div className="absolute inset-0 flex items-center justify-center gap-4 bg-[#4d68de] text-white scale-y-0 opacity-0 origin-bottom transition-all duration-500 ease-in-out group-hover:scale-y-100 group-hover:opacity-100">
-    <span className="text-[16px] font-semibold">Download Resume</span>
-    <RxDownload className="size-5" />
-  </div>
-</button>
-</a>
+                <button ref={buttonRef} className="glass relative group md:px-6 px-6 py-3 md:py-3 rounded-xl text-[16px] font-semibold text-white overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-300">
+                  <span className="text-white flex items-center justify-center gap-4 relative z-10 transition-all duration-500 ease-in-out group-hover:-translate-y-3 group-hover:opacity-0">
+                    <p>Download Resume</p>
+                    <RxDownload className="size-5" />
+                  </span>
+
+                  <div className="absolute inset-0 flex items-center justify-center gap-4 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white scale-y-0 opacity-0 origin-bottom transition-all duration-500 ease-in-out group-hover:scale-y-100 group-hover:opacity-100">
+                    <span className="text-[16px] font-semibold">Download Resume</span>
+                    <RxDownload className="size-5" />
+                  </div>
+                </button>
+              </a>
             </div>
           </div>
 
