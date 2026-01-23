@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 575px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+
+  --color-primary: #0f172a; /* Slate 900 - Deep, professional */
+  --color-secondary: #64748b; /* Slate 500 - Soft text */
+  --color-accent: #eab308; /* Yellow 500 - Gold accent for "premium" feel */
+  --color-sidebar-bg: #ffffff;
+  --color-sidebar-border: #e2e8f0;
+  --color-main-bg: #f8fafc; /* Very light slate gray */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-main-bg text-secondary font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif text-primary font-bold;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl lg:text-[5.5rem] leading-tight tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-5xl lg:text-[3.5rem] leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+
+  p {
+    @apply text-base md:text-lg leading-relaxed text-secondary font-light;
+  }
+
+  /* Custom Utilities for "Premium" feel */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+
+  .premium-shadow {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  }
+}
