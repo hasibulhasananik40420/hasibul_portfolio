@@ -2,18 +2,16 @@
 import Hero from './components/section/Hero';
 import About from './components/section/About';
 import Portfolio from './components/section/Portfolio';
-import Serrvice from './components/section/Serrvice';
-import Blog from './components/section/Blog';
+import Experience from './components/section/Experience';
 import Contact from './components/section/Contact';
 
 const Home = () => {
   return (
-    <div className="w-full">
+    <div>
       <Hero />
       <About />
       <Portfolio />
-      <Serrvice />
-      <Blog />
+      <Experience />
       <Contact />
     </div>
   )

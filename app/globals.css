@@ -8,15 +8,13 @@
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
 
-  --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
-
-  --color-primary: #0f172a; /* Slate 900 - Deep, professional */
-  --color-secondary: #64748b; /* Slate 500 - Soft text */
-  --color-accent: #eab308; /* Yellow 500 - Gold accent for "premium" feel */
+  --font-primary: var(--font-outfit);
+  --color-primary: #0f172a;
+  --color-secondary: #f26c4f;
+  --color-accent: #eab308;
   --color-sidebar-bg: #ffffff;
   --color-sidebar-border: #e2e8f0;
-  --color-main-bg: #f8fafc; /* Very light slate gray */
+  --color-main-bg: #f8fafc;
 }
 
 @layer base {
@@ -25,7 +23,7 @@
   }
 
   body {
-    @apply bg-main-bg text-secondary font-sans;
+    @apply font-primary;
   }
 
   h1,
@@ -34,11 +32,11 @@
   h4,
   h5,
   h6 {
-    @apply font-serif text-primary font-bold;
+    @apply font-primary text-primary font-bold;
   }
 
   h1 {
-    @apply text-5xl md:text-7xl lg:text-[5.5rem] leading-tight tracking-tight;
+    @apply text-6xl leading-tight tracking-tight;
   }
 
   h2 {
@@ -53,12 +51,56 @@
     @apply text-base md:text-lg leading-relaxed text-secondary font-light;
   }
 
-  /* Custom Utilities for "Premium" feel */
-  .glass-card {
-    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
-  }
-
   .premium-shadow {
     box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .portfolio-container {
+    @apply max-w-7xl mx-auto px-5;
+  }
+
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(60px) scale(0.98);
+      filter: blur(5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  .animate-reveal {
+    animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes progress {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  .animate-progress {
+    animation: progress 2s ease-in-out forwards;
   }
 }
