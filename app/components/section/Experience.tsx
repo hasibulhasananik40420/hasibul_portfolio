@@ -14,13 +14,14 @@ interface ExperienceItem {
 }
 
 const experienceData: ExperienceItem[] = [
+
   {
     id: 1,
-    company: "Aniya Network Solutions Inc.",
-    role: "Web Design IT Company",
-    period: "2022 - 2023",
-    description: "Delivered quality code by applying the best development practices",
-   address: "Suite 701, 555 Burrard Street, Vancouver, BC V7X 1M8, Canada",
+    company: "Advertising For Business - A4B",
+    role: "Web & App IT Company",
+    period: "2025 - Present",
+    description: "Built responsive mobile and web layouts for various clients.",
+    address: "25/2 Lake Circus Road, Kalabagan, Dhaka, Bangladesh, 1205",
     position: "Frontend developer",
   },
   {
@@ -34,17 +35,17 @@ const experienceData: ExperienceItem[] = [
   },
   {
     id: 3,
-    company: "Advertising For Business - A4B",
-    role: "Web & App IT Company",
-    period: "2025 - Present",
-    description: "Built responsive mobile and web layouts for various clients.",
-    address: "25/2 Lake Circus Road, Kalabagan, Dhaka, Bangladesh, 1205",
+    company: "Aniya Network Solutions Inc.",
+    role: "Web Design IT Company",
+    period: "2022 - 2023",
+    description: "Delivered quality code by applying the best development practices",
+    address: "Suite 701, 555 Burrard Street, Vancouver, BC V7X 1M8, Canada",
     position: "Frontend developer",
   },
 ];
 
 const Experience = () => {
-  const [openId, setOpenId] = useState<number | null>(null); // Default first one open
+  const [openId, setOpenId] = useState<number | null>(1); // Default first one open
 
   const toggleAccordion = (id: number) => {
     setOpenId(openId === id ? null : id);
@@ -115,13 +116,13 @@ const Experience = () => {
                         {item.address}
                       </p>
                       <div className="flex flex-wrap gap-2 pt-2 pl-4">
-                          
-                            <span
-                              className="px-4 py-1.5 bg-[#EEF2FF] text-[#6366F1] text-[10px] md:text-xs font-bold rounded-md tracking-wider border border-transparent hover:border-[#6366F1]/20 transition-all"
-                            >
-                              {item.position}
-                            </span>
-                        
+
+                        <span
+                          className="px-4 py-1.5 bg-[#EEF2FF] text-[#6366F1] text-[10px] md:text-xs font-bold rounded-md tracking-wider border border-transparent hover:border-[#6366F1]/20 transition-all"
+                        >
+                          {item.position}
+                        </span>
+
                       </div>
                     </div>
                   </div>

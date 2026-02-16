@@ -1,4 +1,5 @@
-import { FaDownload } from "react-icons/fa";
+/* eslint-disable react/no-unescaped-entities */
+import { FaFacebookF, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -20,16 +21,24 @@ const About = () => {
             beautifully functional digital experiences.
           </p>
 
-          <a
-            href="/images/hasibul-hasan.pdf"
-            download="hasibul-hasan.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-secondary transition-all duration-300 active:scale-95 group cursor-pointer"
-          >
-            <FaDownload className="text-lg group-hover:translate-y-0.5 transition-transform duration-300" />
-            Download Resume
-          </a>
+         <div className="flex items-center justify-center md:justify-start gap-4 mt-7">
+                                 <div className="flex items-center gap-2">
+                                     <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center cursor-pointer hover:bg-secondary transition-colors duration-300">
+                                         <FaFacebookF size={16} />
+                                     </span>
+                                     <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center cursor-pointer hover:bg-secondary transition-colors duration-300">
+                                         <FaTwitter size={16} />
+                                     </span>
+                                     <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center cursor-pointer hover:bg-secondary transition-colors duration-300">
+                                         <FaLinkedinIn size={16} />
+                                     </span>
+                                     <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center cursor-pointer hover:bg-secondary transition-colors duration-300">
+                                         <FaGithub size={16} />
+                                     </span>
+         
+         
+                                 </div>
+                             </div>
         </div>
 
         {/* Right Side: Detailed Table-like List */}

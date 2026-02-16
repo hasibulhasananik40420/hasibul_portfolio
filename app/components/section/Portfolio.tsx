@@ -69,7 +69,7 @@ const portfolioItems: PortfolioItem[] = [
         link: "https://sasly-react.vercel.app",
         description: "Multipurpose Landing Page"
     },
-    
+
     {
         id: 8,
         title: "Chad Smith Portfolio",
@@ -80,6 +80,14 @@ const portfolioItems: PortfolioItem[] = [
     },
     {
         id: 9,
+        title: "Ai Langing Page",
+        category: "Landing Page",
+        image: "/images/ai.png",
+        link: "https://startling-boba-daa0dd.netlify.app/",
+        description: "Ai Sass Langing Page"
+    },
+    {
+        id: 10,
         title: "Chad's Tutoring",
         category: "Education",
         image: "/images/chad-tutoring.png",
@@ -90,7 +98,12 @@ const portfolioItems: PortfolioItem[] = [
 
 const Portfolio = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const [visibleCount, setVisibleCount] = useState(9);
     const sectionRef = useRef<HTMLDivElement>(null);
+
+    const handleSeeMore = () => {
+        setVisibleCount((prevCount) => prevCount + 9);
+    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -123,7 +136,7 @@ const Portfolio = () => {
 
                 {/* Simple & Clean Portfolio Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {portfolioItems.map((item, index) => (
+                    {portfolioItems.slice(0, visibleCount).map((item, index) => (
                         <div
                             key={item.id}
                             className={`opacity-0 ${isVisible ? "animate-reveal" : ""}`}
@@ -164,9 +177,16 @@ const Portfolio = () => {
                 </div>
             </div>
 
-            <div className="mt-10 flex justify-center">
-                <button className="px-6 py-3 rounded-md bg-primary text-white text-base font-medium hover:bg-secondary duration-300 ease-in-out cursor-pointer">See More projects</button>
-            </div>
+            {visibleCount < portfolioItems.length && (
+                <div className="mt-10 flex justify-center">
+                    <button
+                        onClick={handleSeeMore}
+                        className="px-6 py-3 rounded-md bg-primary text-white text-base font-medium hover:bg-secondary duration-300 ease-in-out cursor-pointer"
+                    >
+                        See More projects
+                    </button>
+                </div>
+            )}
         </section>
     );
 };
