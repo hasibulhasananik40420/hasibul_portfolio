@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { MainLayout } from './components/layout/MainLayout';
 import { Preloader } from './components/common/Preloader';
+import { ScrollToTop } from './components/common/ScrollToTop';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ResumePage } from './pages/ResumePage';
@@ -15,6 +16,7 @@ const App: React.FC = () => {
     <ThemeProvider>
       <Preloader />
       <BrowserRouter>
+        <ScrollToTop />
         <MainLayout>
           <Routes>
             <Route path="/" element={<HomePage />} />

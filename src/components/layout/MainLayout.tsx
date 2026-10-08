@@ -21,10 +21,26 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const laserBarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!mainRef.current) return;
+    // Reset window (mobile) and container (desktop) scroll position on route change
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 
-    // Reset scroll position on route change
-    mainRef.current.scrollTop = 0;
+    if (mainRef.current) {
+      mainRef.current.scrollTop = 0;
+    }
+    if (pageContentRef.current) {
+      pageContentRef.current.scrollTop = 0;
+    }
+
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      if (mainRef.current) {
+        mainRef.current.scrollTop = 0;
+      }
+    });
 
     const ctx = gsap.context(() => {
       // 1. High-tech laser sweep line running across the top edge
