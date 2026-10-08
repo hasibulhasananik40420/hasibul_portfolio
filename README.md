@@ -1,74 +1,32 @@
-# Hasibul Hasan | Portfolio
+# React + TypeScript + Vite
 
-A premium, minimalist, and high-performance portfolio website built for a modern Web Developer. This project showcases technical expertise, professional experience, and a curated selection of case studies with an editorial design aesthetic.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## 🚀 Live Demo
+Currently, two official plugins are available:
 
-[View Live Site](#) _(Add your link here)_
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## ✨ Key Features
+## React Compiler
 
-- **Premium Editorial Design**: A sophisticated layout using serif typography (Playfair Display) and a clean minimalist structure.
-- **Dynamic Portfolio**: A structured case-study grid with "Load More" functionality and interactive hover effects.
-- **Biography & Credentials**: Detailed about section featuring professional experience (Advertising For Business, Pixelfit) and personal stats.
-- **Specialized Services**: Focused web development service offerings with detailed feature lists.
-- **Modern Blog**: Insights and technical writing section with a clean grid layout.
-- **Interactive Contact**: A conversion-focused contact section with a custom-styled minimalist form.
-- **Fully Responsive**: Optimized for all screen sizes with a custom sidebar navigation system.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🛠️ Technology Stack
+## Expanding the Oxlint configuration
 
-- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Fonts**: Playfair Display (Serif) & Outfit (Sans-serif)
-- **Deployment**: [Vercel](https://vercel.com/)
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
 
-## 📂 Project Structure
-
-```text
-├── app/
-│   ├── components/
-│   │   ├── section/      # Hero, About, Portfolio, Service, Blog, Contact
-│   │   └── Shared/       # Navbar, Sidebar, Footer, Layout
-│   ├── font.ts           # Google Font configurations
-│   ├── globals.css       # Custom CSS variables & Tailwind directives
-│   └── page.tsx          # Main entry point
-├── public/               # Static assets (images, icons)
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
 ```
 
-## ⚙️ Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm / yarn / pnpm
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/hasibul-hasan-portfolio.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd hasibul-hasan-portfolio
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Developed with ❤️ by [Hasibul Hasan](https://github.com/hasibul-hasan-dev)
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
