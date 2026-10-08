@@ -48,7 +48,7 @@ export const HomePage: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="h-full w-full flex items-center justify-center p-5 sm:p-8 md:p-10 lg:p-12"
+      className="h-full w-full flex items-center justify-center p-4 sm:p-8 md:p-10 lg:p-12 pb-24 sm:pb-28 lg:pb-12"
     >
       {/* Hero Intro Section (Responsive layout: column on mobile, row on desktop) */}
       <div className="flex flex-col lg:flex-row items-center gap-5 sm:gap-6 lg:gap-12 w-full max-w-4xl text-center lg:text-left">

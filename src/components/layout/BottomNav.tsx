@@ -34,10 +34,15 @@ export const BottomNav: React.FC = () => {
 
   const handleNavClick = (item: NavItem) => {
     setShowPalette(false);
-    navigate(item.path);
+    if (item.isDownload) {
+      window.open(item.path, '_blank', 'noopener,noreferrer');
+    } else {
+      navigate(item.path);
+    }
   };
 
   const isActive = (item: NavItem) => {
+    if (item.isDownload) return false;
     if (item.path === '/') {
       return location.pathname === '/';
     }

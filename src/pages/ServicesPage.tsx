@@ -76,7 +76,7 @@ export const ServicesPage: React.FC = () => {
   };
 
   return (
-    <div ref={containerRef} className="p-6 md:p-8 lg:p-10 space-y-8">
+    <div ref={containerRef} className="p-4 sm:p-6 md:p-8 lg:p-10 pb-28 sm:pb-32 lg:pb-10 space-y-8">
       {/* Header */}
       <div ref={headerRef} className="pb-4 border-b border-slate-100">
         <span className="text-slate-400 font-semibold text-xs sm:text-sm uppercase tracking-wider block mb-1 font-jakarta">

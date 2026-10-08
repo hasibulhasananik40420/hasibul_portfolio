@@ -100,7 +100,7 @@ export const ResumePage: React.FC = () => {
   };
 
   return (
-    <div ref={containerRef} className="p-6 md:p-8 lg:p-10 space-y-10 font-jakarta">
+    <div ref={containerRef} className="p-4 sm:p-6 md:p-8 lg:p-10 pb-28 sm:pb-32 lg:pb-10 space-y-8 sm:space-y-10 font-jakarta">
       {/* Header */}
       <div ref={headerRef} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
         <div>
@@ -159,11 +159,11 @@ export const ResumePage: React.FC = () => {
                 {/* Header Toggle */}
                 <button
                   onClick={() => toggleAccordion(item.id)}
-                  className="w-full p-4 sm:p-5 flex items-center justify-between text-left cursor-pointer transition-colors"
+                  className="w-full p-3.5 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between text-left cursor-pointer transition-colors gap-2.5 sm:gap-4"
                 >
-                  <div className="flex items-center gap-3.5">
+                  <div className="flex items-start sm:items-center gap-3 sm:gap-3.5 min-w-0 flex-1 w-full">
                     <span
-                      className="w-9 h-9 rounded-xl flex items-center justify-center transition-colors duration-200 shrink-0"
+                      className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center transition-colors duration-200 shrink-0 mt-0.5 sm:mt-0"
                       style={{
                         backgroundColor: isOpen ? currentTheme.primary : '#ffffff',
                         color: isOpen ? '#ffffff' : currentTheme.primary,
@@ -172,47 +172,49 @@ export const ResumePage: React.FC = () => {
                       {isOpen ? <LuMinus size={15} /> : <LuPlus size={15} />}
                     </span>
 
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <h3
-                        className="font-bold text-base sm:text-lg font-outfit transition-colors duration-200"
+                        className="font-bold text-base sm:text-lg font-outfit transition-colors duration-200 leading-snug"
                         style={{
                           color: isOpen ? currentTheme.primary : '#0f172a',
                         }}
                       >
                         {item.company}
                       </h3>
-                      <p className="text-slate-500 text-sm sm:text-base font-light mt-0.5">
+                      <p className="text-slate-500 text-xs sm:text-sm font-light mt-0.5">
                         {item.role}
                       </p>
                     </div>
                   </div>
 
-                  <span
-                    className="px-3 py-1 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap ml-3"
-                    style={{
-                      backgroundColor: isOpen ? '#ffffff' : currentTheme.lightBg,
-                      color: currentTheme.primary,
-                    }}
-                  >
-                    {item.period}
-                  </span>
+                  <div className="pl-11 sm:pl-0 shrink-0 flex items-center">
+                    <span
+                      className="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap inline-block"
+                      style={{
+                        backgroundColor: isOpen ? '#ffffff' : currentTheme.lightBg,
+                        color: currentTheme.primary,
+                      }}
+                    >
+                      {item.period}
+                    </span>
+                  </div>
                 </button>
 
                 {/* Collapsible Content */}
                 {isOpen && (
-                  <div className="px-5 pb-5 pt-1 space-y-3.5 animate-in fade-in">
-                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed pl-12 font-light">
+                  <div className="px-3.5 sm:px-5 pb-4 sm:pb-5 pt-0 sm:pt-1 space-y-3 sm:space-y-3.5 animate-in fade-in">
+                    <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed pl-11 sm:pl-12 font-light">
                       {item.description}
                     </p>
 
-                    <div className="flex items-center gap-2 text-slate-500 text-xs sm:text-sm pl-12">
-                      <LuMapPin size={15} className="shrink-0 text-slate-400" />
-                      <span>{item.address}</span>
+                    <div className="flex items-start sm:items-center gap-2 text-slate-500 text-xs sm:text-sm pl-11 sm:pl-12">
+                      <LuMapPin size={14} className="shrink-0 text-slate-400 mt-0.5 sm:mt-0" />
+                      <span className="leading-snug">{item.address}</span>
                     </div>
 
-                    <div className="pl-12 pt-1">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs sm:text-sm font-bold uppercase tracking-wider bg-white text-slate-700 border border-slate-200/60">
-                        <LuCircleCheck size={14} style={{ color: currentTheme.primary }} />
+                    <div className="pl-11 sm:pl-12 pt-1">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-md text-[11px] sm:text-xs font-bold uppercase tracking-wider bg-white text-slate-700 border border-slate-200/60">
+                        <LuCircleCheck size={13} style={{ color: currentTheme.primary }} />
                         {item.position}
                       </span>
                     </div>
@@ -236,7 +238,7 @@ export const ResumePage: React.FC = () => {
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 font-outfit">Education</h2>
         </div>
 
-        <div ref={eduListRef} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div ref={eduListRef} className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
           {educationData.map((edu) => {
             const isHovered = hoveredEduId === edu.id;
 
@@ -245,7 +247,7 @@ export const ResumePage: React.FC = () => {
                 key={edu.id}
                 onMouseEnter={() => setHoveredEduId(edu.id)}
                 onMouseLeave={() => setHoveredEduId(null)}
-                className="p-5 sm:p-6 rounded-2xl transition-colors duration-200 cursor-default"
+                className="p-4 sm:p-6 rounded-2xl transition-colors duration-200 cursor-default"
                 style={{
                   backgroundColor: isHovered ? currentTheme.lightBg : '#f8fafc',
                 }}
@@ -285,7 +287,7 @@ export const ResumePage: React.FC = () => {
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 font-outfit">Technical Skills</h2>
         </div>
 
-        <div className="bg-[#f8fafc] p-5 sm:p-6 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+        <div className="bg-[#f8fafc] p-4 sm:p-6 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-4">
           {skillsData.map((skill, index) => (
             <div key={index} className="space-y-1.5">
               <div className="flex justify-between items-center text-sm sm:text-base font-semibold text-slate-700">

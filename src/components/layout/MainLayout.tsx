@@ -68,7 +68,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen w-full bg-[#edf2f7] flex items-center justify-center p-3 sm:p-5 md:p-8 lg:p-10 relative overflow-x-hidden font-jakarta">
+    <div className="min-h-screen w-full bg-[#edf2f7] flex flex-col items-center justify-start lg:justify-center p-2.5 sm:p-5 md:p-8 lg:p-10 relative overflow-x-hidden font-jakarta">
       {/* Decorative dot matrix background patterns (Desktop & Tablet) */}
       <div className="absolute top-6 left-6 pointer-events-none opacity-40 select-none hidden sm:block">
         <div className="grid grid-cols-6 gap-2 w-28">
